@@ -1,0 +1,122 @@
+[
+    {
+       "title": "Mercedes-Benz AMG GT Roadster",
+       "ref" : "https://car-images.bauersecure.com/pagefiles/33196/bmercamg-001.jpg",
+       "engine": "4.0L V8 Bi-Turbo",
+       "price": "70 USD"
+    },
+    {
+       "title": "Nissan GT-R Premium",
+       "ref" : "https://vignette.wikia.nocookie.net/gran-turismo/images/8/84/Nissan_GT-R_Premium_Edition_'17.jpg/revision/latest?cb=20181204104400",
+       "engine": "3.8-liter twin-turbo V6 565 HP",
+       "price": "65 USD"
+    },
+    {
+       "title": "Maserati GranTurismo MC Coupe",
+       "ref" : "https://s3.caradvice.com.au/thumb/800/500/wp-content/uploads/2015/10/Maserati-GranTurismo-MC-Sportline-4.jpg",
+       "engine": "4.7L V8 545 HP",
+       "price": "100 USD"
+    },
+    {
+       "title": "BMW i8 Roadster",
+       "ref" : "https://cdn.gearpatrol.com/wp-content/uploads/2019/04/i8-Roadster-Review-Gear-Patrol-slide-2-v2-1940x1300.jpg",
+       "engine": "1.5L Plug-in Hybrid Turbo I3 357hp",
+       "price": "100 USD"
+    },
+    {
+       "title": "Porsche 911 Carrera S",
+       "ref" : "https://d3lp4xedbqa8a5.cloudfront.net/imagegen/max/ccr/620/-/s3/digital-cougar-assets/whichcar/2019/03/18/-1/porsche-911-cabriolet.jpg-t.jpg",
+       "engine": "3.0L Twin Turbo V6 420 HP",
+       "price": "80 USD"
+    },
+    {
+       "title": "Audi RS7 Performance",
+       "ref" : "https://cdn1.autoexpress.co.uk/sites/autoexpressuk/files/2016/06/rs-fd-001.jpg",
+       "engine": "4.0-liter turbocharged V8 560 hp",
+       "price": "75 USD"
+    },
+    {
+       "title": "BMW M6 GrandCoupe",
+       "ref" : "https://pictures.topspeed.com/IMG/jpg/201604/bmw-m6-gran-coupe-by-2.jpg",
+       "engine": "4.4-liter BMW Twin Turbo V-8 560 HP",
+       "price": "65 USD"
+    },
+    {
+       "title": "Maserati GranTurismo Sport Convertible",
+       "ref" : "http://2.bp.blogspot.com/-YObHtj80vNw/TjDll3iBtcI/AAAAAAAABgc/O4VqgquagR8/s1600/2012-maserati-grancabrio--8_800x0w.jpg",
+       "engine": "4.7L V8 454 HP",
+       "price": "95 USD"
+    },
+    {
+       "title": "Mercedes-Benz AMG GT Coupe",
+       "ref" : "https://dmi3w0goirzgw.cloudfront.net/gallery-images/840x560/348000/500/348571.jpg",
+       "engine": "4.0L Bi-Turbo V8 469 HP",
+       "price": "85 USD"
+    },
+    {
+       "title": "Tesla Model S P100D",
+       "ref" : "https://cdn.images.express.co.uk/img/dynamic/24/590x/Tesla-Model-S-P100D-759264.jpg",
+       "engine": "100 kWh Dual Electric Motors: 315 Range",
+       "price": "120 USD"
+    },
+    {
+       "title": "Lexus LC500 Performance",
+       "ref" : "https://editorial.pxcrush.net/carsales/general/editorial/170713_Lexus_LC500_03.jpg?width=1024&height=683",
+       "engine": "5.0 litres V8, 471 hp",
+       "price": "65 USD"
+    },
+    {
+       "title": "BMW X6M Performance",
+       "ref" : "http://brandtuning.ru/upload/resize_cache/iblock/b44/716_480_2d731caab307175219bfacb3d806131fb/b44506ddd5e27c0a14be2ffdbafc7d92.jpg",
+       "engine": "4.4L Turbocharged V8 567 HP",
+       "price": "95 USD"
+    },
+    {
+       "title": "Chevrolet Corvette Z06 2LT Convertible",
+       "ref" : "https://static.cargurus.com/images/article/2017/10/24/13/18/2018_chevrolet_corvette_preview_overview-pic-8265176339461111120-1600x1200.jpeg",
+       "engine": "6.2 L Supercharged V8 650 HP",
+       "price": "110 USD"
+    },
+    {
+       "title": "Mercedes-Benz GLE 43 AMG Coupe",
+       "ref" : "https://i.wheelsage.org/pictures/m/mercedes-benz/gle_350_d_4matic_coupe_amg_line/mercedes-benz_gle_350_d_4matic_coupe_amg_line_40.jpeg",
+       "engine": "3.0L Twin Turbo V6 385hp",
+       "price": "80 USD"
+    },
+    {
+       "title": "Cadillac CTS-V Carbon Edition",
+       "ref" : "https://i.wheelsage.org/image/format/picture/picture-preview-large/c/cadillac/cts-v_carbon_black_edition/cadillac_cts-v_carbon_black_edition_5_05e4030e0971066c.jpg",
+       "engine": "Supercharged 6.2L V8 640 HP",
+       "price": "120 USD"
+    },
+    {
+       "title": "Porsche Cayenne GTS Performance",
+       "ref" : "https://www.motorward.com/wp-content/images/2014/09/Cayenne-GTS-MM-0.jpg",
+       "engine": "3.6L Twin-Turbo V6 440 HP",
+       "price": "100 USD"
+    },
+    {
+       "title": "Land Rover Range Rover Sport Supercharged",
+       "ref" : "https://0b38966e54e8bebf4a9b-c91cf87d0ed24f4939ca44173a86a2bc.ssl.cf1.rackcdn.com/SALWR2RV3KA820508/a56c18280e585f404135e3f63fb3d040.jpg",
+       "engine": "5.0L Supercharged V8 518 HP",
+       "price": "110 USD"
+    },
+    {
+       "title": "Maserati Levante Gransport",
+       "ref" : "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/maserati-levante-gransport.jpg?itok=UV1OFXh1",
+       "engine": "3.0 Liter V6 345hp AWD",
+       "price": "115 USD"
+    },
+    {
+       "title": "Alfa Romero Guilia Quadrafoglio",
+       "ref" : "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/07/alfa-3.jpg",
+       "engine": "2.9-liter turbocharged V-6 engine; 505 hp",
+       "price": "95 USD"
+    },
+    {
+       "title": "Jaguar F-Type S",
+       "ref" : "https://i.ytimg.com/vi/4Q8_TbNdGnI/maxresdefault.jpg",
+       "engine": "3.0 Liter V6 340 HP Supercharged RWD",
+       "price": "90 USD"
+    }
+]
