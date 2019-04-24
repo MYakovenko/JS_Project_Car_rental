@@ -13,9 +13,9 @@ document.body.style = `
     background-position:0px;
 `
 
-let elem = document.body.appendChild( 
-    document.createElement ( 'wrapper-cars-element' )
-)
+// let elem = document.body.appendChild( 
+//     document.createElement ( 'wrapper-cars-element' )
+// )
 
 
 class WrapperCarsElement extends HTMLElement{
@@ -31,7 +31,7 @@ class WrapperCarsElement extends HTMLElement{
         )
 
         (function getImage () {
-                    fetch (``)
+                    fetch (`json/carsInfo.json`)
                         .then (
                             response => response.json ()
                                 .then ( cars => cars.forEach(
