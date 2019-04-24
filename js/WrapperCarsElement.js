@@ -28,7 +28,7 @@ class WrapperCarsElement extends HTMLElement{
 
         let addElement = (tagName, parentNode) => parentNode.appendChild(
             document.createElement(tagName)
-        )
+        );
 
         (function getImage () {
                     fetch (`json/carsInfo.json`)
