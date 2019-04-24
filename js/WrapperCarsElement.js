@@ -24,7 +24,7 @@ class WrapperCarsElement extends HTMLElement{
         this.shadow = this.attachShadow ( { mode: 'open' } )
         let wrapper = document.createElement('div')
         wrapper.className = 'wrapper'
-        this.shadow.appendChild('wrapper')
+        this.shadow.appendChild(wrapper)
 
         let addElement = (tagName, parentNode) => `${parentNode}`.appendChild(
             document.createElement(tagName)
