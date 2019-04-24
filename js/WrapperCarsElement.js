@@ -1,17 +1,17 @@
-document.body.style = `
-    margin:0 auto;
-    width:700px;
-    height:800px;
-    padding:0px;
+// document.body.style = `
+//     margin:0 auto;
+//     width:700px;
+//     height:800px;
+//     padding:0px;
     
- background: linear-gradient(rgba(0,0,0,0.5),
-  rgba(0,0,0,0.5)),
-  url('https://img4.goodfon.com/wallpaper/nbig/e/57/need-for-speed-payback-cars-vehicles-nfs-garage-nissan.jpg');
+//  background: linear-gradient(rgba(0,0,0,0.5),
+//   rgba(0,0,0,0.5)),
+//   url('https://img4.goodfon.com/wallpaper/nbig/e/57/need-for-speed-payback-cars-vehicles-nfs-garage-nissan.jpg');
    
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    background-position:0px;
-`
+//     background-repeat:no-repeat;
+//     background-attachment:fixed;
+//     background-position:0px;
+// `
 
 // let elem = document.body.appendChild( 
 //     document.createElement ( 'wrapper-cars-element' )
