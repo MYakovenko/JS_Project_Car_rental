@@ -51,7 +51,7 @@ class WrapperCarsElement extends HTMLElement{
                         )
           })()
 
-         let shadowStyles = addElement('style', this.shadow)
+         this.shadowStyles = addElement('style', this.shadow)
 
           this.shadowStyles.textContent = `
             .car-title {
