@@ -12,7 +12,7 @@ async function start () {
         )
     await Promise.all ( [ promise_1, promise_2 ] )
     showCars ()
-    changeMainBannerImage ()
+    //changeMainBannerImage ()
 }
 
 
