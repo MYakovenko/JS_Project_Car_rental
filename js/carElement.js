@@ -14,16 +14,6 @@ class carElement extends HTMLElement {
         let title = addElem('div', document.querySelector('.car-element'))
         title.className = "car-title"
         
-        
-
-        this.setImage (url) = function () {
-            img.setAtribute('src', url)
-        }
-
-        this.setTitle(text) = function () {
-            title.textContent = text
-        }
-
         this.styles = addElement('style', this.shadow)
         this.styles.textContent = `
             .car-conteiner {
@@ -50,6 +40,13 @@ class carElement extends HTMLElement {
             }
         `
         
+    }
+    this.setImage (url) = function () {
+        img.setAtribute('src', url)
+    }
+
+    this.setTitle(text) = function () {
+        title.textContent = text
     }
 }
 customElements.define ( "car-element", carElement )
