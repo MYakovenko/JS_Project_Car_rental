@@ -35,13 +35,13 @@ function showCars () {
             let elem = addElem ( 'car-element', document.querySelector('.cars-wrapper') )
             elem.className = "car-conteiner"
 
-            let img = addElem('img', this)
-            img.setAttribute('class', "car-image")
-            img.width = "300"
-            img.height = "200"
-            let title = addElem('div', this)
-            title.setAttribute('class', "car-title")
-            
+            // let img = addElem('img', this)
+            // img.setAttribute('class', "car-image")
+            // img.width = "300"
+            // img.height = "200"
+            // let title = addElem('div', this)
+            // title.setAttribute('class', "car-title")
+
             elem.setImage ( item.ref )           
             elem.setTitle ( item.title )
 

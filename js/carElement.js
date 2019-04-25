@@ -7,20 +7,20 @@ class carElement extends HTMLElement {
             document.createElement(tagName)
         )
 
-        // this.img = addElem('img', this)
-        // this.img.setAttribute('class', "car-image")
-        // this.img.width = "300"
-        // this.img.height = "200"
-        // this.title = addElem('div', this)
-        // this.title.setAttribute('class', "car-title")
+        this.img = addElem('img', this.shadow)
+        this.img.setAttribute('class', "car-image")
+        this.img.width = "300"
+        this.img.height = "200"
+        this.title = addElem('div', this.shadow)
+        this.title.setAttribute('class', "car-title")
 
-        // this.setImage (url) = function () {
-        //     img.setAtribute('src', url)
-        // }
+        this.setImage (url) = function () {
+            img.setAtribute('src', url)
+        }
     
-        // this.setTitle(text) = function () {
-        //     title.textContent = text
-        // }
+        this.setTitle(text) = function () {
+            title.textContent = text
+        }
 
         
         this.styles = addElement('style', this.shadow)
