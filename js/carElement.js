@@ -25,7 +25,7 @@ class carElement extends HTMLElement {
         
         this.styles = addElement('style', this.shadow)
         this.styles.textContent = `
-            .car-conteiner {
+            car-element {
                 display:flex;
                 flex-direction: column;
                 text-align: center;

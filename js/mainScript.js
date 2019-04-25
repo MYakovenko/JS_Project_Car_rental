@@ -33,7 +33,7 @@ function showCars () {
         transport.push ( ( function () {
                                         
             let elem = addElem ( 'car-element', document.querySelector('.cars-wrapper') )
-            elem.className = "car-conteiner"
+            //elem.className = "car-conteiner"
 
             // let img = addElem('img', this)
             // img.setAttribute('class', "car-image")
