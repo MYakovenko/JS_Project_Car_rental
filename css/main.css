@@ -189,7 +189,12 @@ li.info {
 	font-size: 0.65rem;
 }
 
-
+/*Cars Wrapper*/
+.cars-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
 
 @media (min-width: 800px) {
 	html {
