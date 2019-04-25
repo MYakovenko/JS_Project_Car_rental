@@ -7,12 +7,12 @@ class carElement extends HTMLElement {
             document.createElement(tagName)
         )
 
-        let img = addElem('img', document.querySelector('.car-element'))
-        img.className = "car-image"
-        img.width = "300"
-        img.height = "200"
-        let title = addElem('div', document.querySelector('.car-element'))
-        title.className = "car-title"
+        this.img = addElem('img', document.querySelector('.car-element'))
+        this.img.className = "car-image"
+        this.img.width = "300"
+        this.img.height = "200"
+        this.title = addElem('div', document.querySelector('.car-element'))
+        this.title.className = "car-title"
 
         // this.setImage (url) = function () {
         //     img.setAtribute('src', url)
@@ -51,11 +51,11 @@ class carElement extends HTMLElement {
         
     }
     setImage (url) {
-        this.elem.src = url
+        this.img.src = url
     }
 
     setTitle(text) {
-        this.elem.title.textContent = text
+        this.title.textContent = text
     }
 
 }
