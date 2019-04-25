@@ -12,7 +12,7 @@ class carElement extends HTMLElement {
         this.img.width = "300"
         this.img.height = "200"
         this.title = addElem('div', this.shadow)
-        this.title.setAttribute('class', "car-title")
+        // this.title.setAttribute('class', "car-title")
 
         this.setImage (url) = function () {
             img.setAtribute('src', url)
