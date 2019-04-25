@@ -51,11 +51,11 @@ class carElement extends HTMLElement {
         
     }
     setImage (url) {
-        img.setAtribute('src', url)
+        this.elem.src = url
     }
 
     setTitle(text) {
-        title.textContent = text
+        this.elem.title.textContent = text
     }
 
 }
