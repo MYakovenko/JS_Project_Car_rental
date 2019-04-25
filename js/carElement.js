@@ -7,11 +7,11 @@ class carElement extends HTMLElement {
             document.createElement(tagName)
         )
 
-        this.img = addElem('img', document.querySelector('.car-conteiner'))
+        this.img = addElem('img', this)
         this.img.className = "car-image"
         this.img.width = "300"
         this.img.height = "200"
-        this.title = addElem('div', document.querySelector('.car-conteiner'))
+        this.title = addElem('div', this)
         this.title.className = "carTitle"
 
         // this.setImage (url) = function () {
