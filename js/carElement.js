@@ -14,13 +14,13 @@ class carElement extends HTMLElement {
         this.title = addElem('div', this.shadow)
         // this.title.setAttribute('class', "car-title")
 
-        this.setImage (url) = function () {
-            img.setAtribute('src', url)
-        }
+        // this.setImage (url) = function () {
+        //     img.setAtribute('src', url)
+        // }
     
-        this.setTitle(text) = function () {
-            title.textContent = text
-        }
+        // this.setTitle(text) = function () {
+        //     title.textContent = text
+        // }
 
         
         this.styles = addElement('style', this.shadow)
