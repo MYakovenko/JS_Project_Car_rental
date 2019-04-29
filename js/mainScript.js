@@ -6,7 +6,7 @@ async function start () {
         .then ( response => response.json()                     //http://localhost:3000/carsInfo
           .then ( response => cars = response )
         )
-    let promise_2 = fetch ( "http://json/mainBannerPictures.json" ) //json/mainBannerPictures.json
+    let promise_2 = fetch ( "json/mainBannerPictures.json" ) //json/mainBannerPictures.json
         .then ( response => response.json()                             //http://localhost:3000/mainBannerPictures
           .then ( response => mainBannerPictures = response )
         )
