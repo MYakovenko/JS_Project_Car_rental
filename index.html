@@ -10,8 +10,9 @@
 	<link media="all" rel="stylesheet" href="css/icomoon.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
 	<script src="js/picturefill.js"></script>
-	<script src="js/WrapperCarsElement.js"></script>
 	<script src="js/carElement.js"></script>
+	<script src="js/carInformationElement.js"></script>
+	<script src="js/rentElement.js"></script>
 	<script src="js/mainScript.js"></script>
 </head>
 <body>
@@ -37,7 +38,7 @@
 					<li class="info">
 						<div class="address">
 							<div>Kharkiv, 3, Sumskay st.</div>
-							<div> info@open1969.com</div>
+							<div> info@drive.com</div>
 						</div>
 						<div><img src='img/icons/png/map.png'/></div>
 					</li>
@@ -49,9 +50,9 @@
 						<div><img src='img/icons/png/phone-1.png'/></div>
 					</li>
 					<li class="social_icons">
-							<span class="twitter"><a href="#"><img src='img/icons/png/Twitter-1.png'/></a></span>
-							<span class="instagram"><a href="#"><img src='img/icons/png/instagram-1.png'/></a></span>
-							<span class="facebook"><a href="#"><img src='img/icons/png/facebook-1.png'/></a></span>
+							<span class="twitter"><a href="https://twitter.com/"><img src='img/icons/png/Twitter-1.png'/></a></span>
+							<span class="instagram"><a href="https://www.instagram.com/"><img src='img/icons/png/instagram-1.png'/></a></span>
+							<span class="facebook"><a href="https://www.facebook.com/"><img src='img/icons/png/facebook-1.png'/></a></span>
 						
 					</li>
 				</ul>
@@ -59,24 +60,303 @@
 		</header>
 
 		<div class="main_banner">
-			<!--<img src="img/main_banner.png"/>-->
+			<!--<img class = "main-banner-picture" src="http://hdw7.com/wallpapers/91/black-car-1920x1080.jpg">-->
 
 			<div class="main_banner_info">
-				<div class="title">Coworking space</div>
-				<img src='img/LOGO.png'/>
-				<div class="info">EUROPEAN OFFICE IN THE CENTRE</div>
-
-				<div class="form">
-					<form>
-					<div class="form-title">BOOK YOUR PLACE</div>
-					
-					</form>
-				</div>
+				<div class="title">CAR RENTAL</div>
+				<img src='img/big-logo.png'/>
+				<div class="info">THERE IS NOTHING ON THE ROAD LIKE IT</div>
+				<div class="form-title">Jump in!</div>
 			</div>
 		</div>
 
+
+		<template id="carElement">
+				<div class = "car-tank" color = "#f6f1bf"> 
+					<img class = "car-image" src = "">
+					<div class = "car-title"></div>
+				</div>
+				<style>
+					.car-tank {
+						display:flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+						padding: 10px;
+						margin: 10px	
+					}
+					.car-image {
+						width: 90%;
+						height: auto;
+						padding: 10px;
+						border: 2px solid #f6f1bf;
+						margin-bottom: 10px;
+					}
+					.car-image:hover {
+						box-shadow: inset 10px 10px 10px #f6f1bf90;
+					}
+					.car-title {
+						color: #f6f1bf;
+						font: 16px/20px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+						font-weight: 800;
+					}
+				 </style>
+		</template>
+
+		<template id = "carInformationElement">
+			<div class = "car-info-wrapper">
+				<img class = "car-image-info" src = "">
+				<div class = "info-conteiner">
+					<div class = "overview"></div>
+					<div class = "additional-info">
+						<div class = "engine-info"></div>
+						<div class = "price-info"></div>
+					</div>
+				</div>
+				<div class = "buttons-conteiner">
+					<a href = "#" class = "button">Cancel</a>
+					<a href = "#" class = "button">Rent</a>
+				</div>
+			</div>
+			<style>
+				.car-info-wrapper {
+					width: 45%;
+					position: fixed;
+					top: 0%;
+					left: 25%;
+					display:flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+					background-color: #f6f1bf;
+					padding: 20px 10px;
+					margin: 10px;	
+				}
+				.info-conteiner {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					margin: 0px 20px;
+				}
+				.additional-info {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+				}
+				.car-image-info {
+					width: 90%;
+					height: auto;
+					padding: 10px;
+					border: 2px solid #797875;
+					margin-bottom: 10px;
+				}
+				.overview, .additional-info {
+					color: #000;
+					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 400;
+					padding: 10px;
+					text-align: left;
+				}
+				.overview {
+					width: 80%;
+					border-right: 1px solid #797875;
+					
+				}
+				.price-info {
+					margin-top: 20px;
+					font-weight: 800;
+					text-shadow: 1px 1px 1px #797875;
+				}
+				.buttons-conteiner {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+					align-items: flex-end;
+					margin-top: 10px;
+				}
+				a {
+					color: #f6f1bf;
+					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 800;
+					letter-spacing: 0.1em;
+					text-decoration: none;
+				}
+				.button {
+					padding: 7px 40px;
+					margin-right: 10px;
+					background-color: #797875;
+					border: 2px solid #797875;
+					border-radius: 1.5em;
+				}
+				.button:hover {
+					background-color: #f6f1bf;
+					color: #797875;
+				}
+
+			 </style>
+		</template>
+
+		<template id = "rent-element">
+			<div class = "rent-wrapper">
+				<h2>RESERVATION</h2>
+				<div class = "input-holder">
+					<form name = "rent-form">
+							<label for="input-name">Name*</label>
+							<input id="input-name" type="text" placeholder="Jon Duglas" required name="name"/> </br>
+
+							<label for="input-email">E-mail*</label>
+							<input id="input-email" type="email" placeholder="jonduglas@mail.com" required name="email"/> </br>
+
+							<label for="input-phone">Phone*</label>
+							<input id="input-phone" type="text" min = "13" max = "13" placeholder="+3 8067 329 26 26" required name="phone"/></br>
+
+							<label for="city-select">City*</label>
+							<select id="city-select" name="city" required>
+								<option value="Kiev">Kiev</option>
+								<option value="Kharkiv">Kharkiv</option>
+								<option value="Lviv">Lviv</option>
+								<option value="Odessa">Odessa</option>
+							</select> </br>
+
+							<label for="place-select">Place*</label>
+							<select id="place-select" name="place" required>
+								<option value="Kiev-airport">Boryspil Airport, Terminal D</option>
+								<option value="Kiev-Railway Station">Railway Station</option>
+								<option value="Kiev-Zhulyany">Kyiv International Airport (Zhulyany)</option>
+								<option value="Kiev-office">Main Office, 20 Dniprovska Naberezhna Street</option>
+							</select> </br>
+
+							<label class = "date" for="pick-up-date">PICK UP DATE AND TIME*</label>
+							<label class = "date" for="drop-off-date">DROP OFF DATE AND TIME*</label> </br>
+
+							<input id = "pick-up-date" type = "date" name = "pick-up-date"/>
+							<input id = "drop-off-date" type = "date" name = "drop-off-date"/> </br>
+
+							<input id = "pick-up-time" type = "time" name = "pick-up-time"/>
+							<input id = "drop-off-time" type = "time" name = "drop-off-time"/>
+
+					</form>
+					<button class = 'cancel'>Cancel</button>
+					<button type = "submit">Proceed</button>
+				</div>
+			</div>
+			<style>
+				.rent-wrapper {
+					width: 45%;
+					position: fixed;
+					top: 0%;
+					left: 25%;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+					background-color: #f6f1bf;
+					color: #33313b;
+					font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 600;
+					text-shadow: 1px 1px 1px #797875;
+					margin: 20px;
+					padding: 20px;
+				}
+				.input-holder {
+					width: 90%;
+					border: 2px solid #797875;
+					padding: 20px;
+					padding-left: 6%;
+				}
+				input[type="text"],
+				input[type="email"],
+				select {
+					display: inline-block;
+					width: 60%;
+					background-color: #fff;
+					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					color: #33313b;
+					padding: 7px;
+					margin-bottom: 20px;
+					border: none;
+				}
+				input[type="date"],
+				input[type="time"] {
+					width: 40%;
+					display: inline-block;
+					margin-right: 5%;
+					margin-bottom: 10px;
+				}
+				::-webkit-input-placeholder {
+					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					color: #33313b;
+				}
+				::-ms-input-placeholder {
+					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					color: #33313b;
+				}
+				select {
+					width: calc(60% + 15px);
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					-ms-appearance: none;
+					appearance: none!important;
+					text-indent: 0.01px; 
+					text-overflow: '';
+					
+					/* background-image: url(../select_arrow.png); */
+					/* background-position: right center;
+					background-repeat: no-repeat;
+					background-size: 4%; */
+					color: #33313b;
+					line-height: 1em;
+				}
+				label {
+					display:inline-block;
+					width: 20%; 
+					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 600;
+					color: #33313b;
+					margin-bottom: 5px;
+				}
+				label.date {
+					width: 45%;
+					font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 600;
+					margin-top: 10px;
+				}
+				button {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					-ms-appearance: none;
+					appearance: none!important;
+					display: inline;
+					padding: 7px 40px;
+					margin-right: 10px;
+					background-color: #797875;
+					border: 2px solid #797875;
+					border-radius: 1.5em;
+					margin-top: 20px;
+					color: #f6f1bf;
+					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 800;
+					letter-spacing: 0.1em;
+				}
+				button.cancel {
+					margin-left: 22%;
+				}
+				button:hover {
+					background-color: #f6f1bf;
+					color: #797875;
+				}
+				
+			</style>
+		</template>
+
+		<h3 class = 'cars-wrapper-title'>AVAILABLE VEHICLES</h3>
+		<div class = 'cars-wrapper'></div>
 		
 	</div>
-	<div class = 'cars-wrapper'></div>
+	
 </body>
 </html>

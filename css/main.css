@@ -10,11 +10,27 @@ html {
 }
 
 body {
-	color: #575756;
-	background: #fff;
+	
+	color: #ebf0f5;
+	background: rgb(190, 189, 189);
 	letter-spacing: .05em;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	
+	margin:0 auto;
+	background-size: cover;
+	height: auto;
+	padding:0px;
+    
+	background: linear-gradient(rgba(0,0,0,0.5),
+	rgba(0,0,0,0.5)),
+	url('https://static.saint-pauldevence.com/wp-content/uploads/2017/08/parking-1-1600x900.jpg');
+   
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:0px;
+
 }
 
 img {
@@ -65,15 +81,18 @@ a:focus {
 /*Header*/
 
 .page-wrapper {
+	width: 100vw;
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
+	padding: 0;
+   
 }
 
 .header {
 	position: relative;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	background-color: #0c0105;
 	padding: 3px 5px 0px 5px;
 }
@@ -97,12 +116,12 @@ ul {
 }
 
 .menu li {
-	margin: 0 5%;
+	margin: 0 10%;
 	position: relative;
-	padding: 10px 0;
+	padding: 10px 0px;
 	text-align: left;
 	color: #f6f1bf;
-	font-size: 0.5rem;
+	font-size: 0.3rem;
 	font-weight: 300;
 }
 
@@ -120,6 +139,7 @@ li.info {
 
 .drop {
 	width: 400%;
+	padding-left: 15px;
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -134,7 +154,7 @@ li.info {
 }
 
 .drop-menu li {
-	padding: 0;
+	margin-left: 15px;
 	margin-top: 0;
 	font-size: 0.7rem;
 	line-height: 1.3rem;
@@ -154,27 +174,23 @@ li.info {
 }
 
 /*Main_banner*/
-/*
-.main_banner {
-	background-size: cover;
-}*/
 
 .main_banner {
-	background: url("../img/main_banner.png") center top no-repeat;
-	background-size: 100%;
-	height: 300px;
+	background: url("http://hdw7.com/wallpapers/91/black-car-1920x1080.jpg") center top no-repeat;
+	background-size: cover;
+	height: 350px;
 
 	display: flex;
-	justify-content: flex-center;
+	justify-content: top;
 	align-items: flex-end;
-	flex-direction: column;
+	flex-direction: column; 
 }
 
 .main_banner_info {
 	width: 35%;
 	text-align: center;
 	margin: 2% 5%;
-	color: #f6f1bf;
+	color: #797875;
 	font-size: 0.5rem;
 	line-height: 0.75rem;
 	font-weight: 800;
@@ -187,14 +203,26 @@ li.info {
 .main_banner_info .info {
 	margin-top: 15px;
 	font-size: 0.65rem;
+	margin-bottom: 10px;
 }
 
 /*Cars Wrapper*/
 .cars-wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
+	display: grid;  
+	grid-template-columns: 1fr 1fr; 
+	width: 95%;
 }
+
+.cars-wrapper-title {
+	text-align: center;
+	color: #f6f1bf;
+	font:  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+	font-weight: 800;
+	letter-spacing: 0.5em;
+	text-shadow: 2px 2px 2px #000;
+	margin-top: 20px;
+}
+
 
 @media (min-width: 800px) {
 	html {
@@ -202,7 +230,7 @@ li.info {
 }
 
 .page-wrapper {
-	max-width: 1280px;
+	max-width: 100vw;
 }
 
 /*Header*/
@@ -277,13 +305,22 @@ li .phone {
 }
 
 .main_banner_info .title {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 
 .main_banner_info .info {
-	margin-top: 40px;
+	margin-top: 20px;
 	font-size: 1rem;
 	line-height: 1.2rem;
+}
+
+/*Cars Wrapper*/
+.cars-wrapper {
+	/*display: flex;
+	flex-wrap: wrap;*/
+	display: grid;  
+	grid-template-columns: 1fr 1fr 1fr;
+
 }
 
 }
