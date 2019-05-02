@@ -13,8 +13,8 @@ class carInformationElement extends HTMLElement {
         // )
 
         this.findElement = function (tagName) {
-            console.dir(shadow)
-            console.log(shadow.childNodes)
+            // console.dir(shadow)
+            // console.log(shadow.childNodes)
             let element = Array.from(shadow.children[0].children).find(
                 (elem) => elem.tagName === `${tagName.toUpperCase()}`
             )

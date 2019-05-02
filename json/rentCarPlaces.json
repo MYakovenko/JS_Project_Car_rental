@@ -1,0 +1,30 @@
+{
+    "Kiev": [
+      "...",
+      "Boryspil Airport, Terminal D",
+      "Railway Station",
+      "Kyiv International Airport (Zhulyany)",
+      "Main Office, 20 Dniprovska Naberezhna Street",
+      "Throughout the city"
+    ],
+    "Kharkiv": [
+      "...",
+      "Kharkiv International Airport",
+      "Railway Station",
+      "Office, 94a Klochkivska Street",
+      "Throughout the city"
+    ],
+    "Lviv": [
+      "...",
+      "Lviv D.Halytskyi International Airport",
+      "Railway Station",
+      "Office, 15 Sumskaya Street",
+      "Throughout the city"
+    ],
+    "Odessa": [
+      "...",
+      "Railway Station",
+      "Office, 16 Bunina Street",
+      "Throughout the city"
+    ]
+  }

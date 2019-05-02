@@ -8,8 +8,11 @@
 	<link media="all" rel="stylesheet" href="css/normalize.css">
 	<link media="all" rel="stylesheet" href="css/main.css">
 	<link media="all" rel="stylesheet" href="css/icomoon.css">
+	
 	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
+	
 	<script src="js/picturefill.js"></script>
+	
 	<script src="js/carElement.js"></script>
 	<script src="js/carInformationElement.js"></script>
 	<script src="js/rentElement.js"></script>
@@ -204,44 +207,39 @@
 			<div class = "rent-wrapper">
 				<h2>RESERVATION</h2>
 				<div class = "input-holder">
-					<form name = "rent-form">
+					<form name = "rent-form" action = "http://localhost:3000/rentalRequests" method = "POST">
+							<div class = "error"></div>
 							<label for="input-name">Name*</label>
-							<input id="input-name" type="text" placeholder="Jon Duglas" required name="name"/> </br>
-
+							<input id="input-name" type="text" placeholder="Jon Duglas" required name="name"/> 
+							</br>							
+							<div class = "error"></div>
 							<label for="input-email">E-mail*</label>
-							<input id="input-email" type="email" placeholder="jonduglas@mail.com" required name="email"/> </br>
-
+							<input id="input-email" type="email" placeholder="jonduglas@mail.com" required name="email"/> 
+							</br>
+							<div class = "error"></div>
 							<label for="input-phone">Phone*</label>
-							<input id="input-phone" type="text" min = "13" max = "13" placeholder="+3 8067 329 26 26" required name="phone"/></br>
-
+							<input id="input-phone" type="text" min = "13" max = "13" placeholder="+38-067-329-26-26" required name="phone"/>
+							</br>
 							<label for="city-select">City*</label>
-							<select id="city-select" name="city" required>
-								<option value="Kiev">Kiev</option>
-								<option value="Kharkiv">Kharkiv</option>
-								<option value="Lviv">Lviv</option>
-								<option value="Odessa">Odessa</option>
-							</select> </br>
-
+							<select id="city-select" name="city" required></select> 
+							</br>							
 							<label for="place-select">Place*</label>
-							<select id="place-select" name="place" required>
-								<option value="Kiev-airport">Boryspil Airport, Terminal D</option>
-								<option value="Kiev-Railway Station">Railway Station</option>
-								<option value="Kiev-Zhulyany">Kyiv International Airport (Zhulyany)</option>
-								<option value="Kiev-office">Main Office, 20 Dniprovska Naberezhna Street</option>
-							</select> </br>
-
+							<select id="place-select" name="place" required></select> 
+							</br>
 							<label class = "date" for="pick-up-date">PICK UP DATE AND TIME*</label>
-							<label class = "date" for="drop-off-date">DROP OFF DATE AND TIME*</label> </br>
-
-							<input id = "pick-up-date" type = "date" name = "pick-up-date"/>
-							<input id = "drop-off-date" type = "date" name = "drop-off-date"/> </br>
-
+							<label class = "date" for="drop-off-date">DROP OFF DATE AND TIME*</label> 
+							</br>
+							<input id = "pick-up-date" type = "date" name = "pick-up-date" required/>
+							<input id = "drop-off-date" type = "date" name = "drop-off-date" required/> 
+							</br>
 							<input id = "pick-up-time" type = "time" name = "pick-up-time"/>
 							<input id = "drop-off-time" type = "time" name = "drop-off-time"/>
-
+							<div class = "error"></div>
 					</form>
-					<button class = 'cancel'>Cancel</button>
-					<button type = "submit">Proceed</button>
+					<div class = "button-wrapper">
+						<button class = 'cancel'>Cancel</button>
+						<button type = "submit">Proceed</button>
+					</div>
 				</div>
 			</div>
 			<style>
@@ -250,10 +248,6 @@
 					position: fixed;
 					top: 0%;
 					left: 25%;
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-start;
-					align-items: flex-start;
 					background-color: #f6f1bf;
 					color: #33313b;
 					font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
@@ -276,6 +270,7 @@
 					background-color: #fff;
 					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
 					color: #33313b;
+					font-weight: 600;
 					padding: 7px;
 					margin-bottom: 20px;
 					border: none;
@@ -287,13 +282,12 @@
 					margin-right: 5%;
 					margin-bottom: 10px;
 				}
-				::-webkit-input-placeholder {
+				::-ms-input-placeholder,
+				::-webkit-input-placeholder,
+				::-moz-input-placeholde{
 					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					color: #33313b;
-				}
-				::-ms-input-placeholder {
-					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					color: #33313b;
+					color: #ABABAB;
+					font-weight: 300;
 				}
 				select {
 					width: calc(60% + 15px);
@@ -303,11 +297,6 @@
 					appearance: none!important;
 					text-indent: 0.01px; 
 					text-overflow: '';
-					
-					/* background-image: url(../select_arrow.png); */
-					/* background-position: right center;
-					background-repeat: no-repeat;
-					background-size: 4%; */
 					color: #33313b;
 					line-height: 1em;
 				}
@@ -325,6 +314,16 @@
 					font-weight: 600;
 					margin-top: 10px;
 				}
+				.error {
+					font: 10px/12px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 500;
+					color: #33313b;
+					margin-left: 22%;
+					text-shadow: none;
+				}
+				.button-wrapper {
+					text-align: center;
+				}
 				button {
 					-webkit-appearance: none;
 					-moz-appearance: none;
@@ -341,9 +340,6 @@
 					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
 					font-weight: 800;
 					letter-spacing: 0.1em;
-				}
-				button.cancel {
-					margin-left: 22%;
 				}
 				button:hover {
 					background-color: #f6f1bf;

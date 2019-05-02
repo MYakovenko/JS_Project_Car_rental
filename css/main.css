@@ -210,7 +210,7 @@ li.info {
 .cars-wrapper {
 	display: grid;  
 	grid-template-columns: 1fr 1fr; 
-	width: 95%;
+	width: 90%;
 }
 
 .cars-wrapper-title {
@@ -231,6 +231,7 @@ li.info {
 
 .page-wrapper {
 	max-width: 100vw;
+	margin: auto;
 }
 
 /*Header*/
@@ -316,8 +317,9 @@ li .phone {
 
 /*Cars Wrapper*/
 .cars-wrapper {
-	/*display: flex;
-	flex-wrap: wrap;*/
+	max-width: 1400px;
+	position: relative;
+	margin: auto;
 	display: grid;  
 	grid-template-columns: 1fr 1fr 1fr;
 

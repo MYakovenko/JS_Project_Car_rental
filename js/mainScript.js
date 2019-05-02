@@ -1,16 +1,26 @@
 let cars = null
 let mainBannerPictures = null
+let rentCarCities = null
+let rentCarPlaces = null
 
-async function start () {
+async function getData () {
     let promise_1 = fetch ( "json/carsInfo.json" ) //json/carsInfo.json
-        .then ( response => response.json()                     //http://localhost:3000/carsInfo
+        .then ( response => response.json()        //http://localhost:3000/carsInfo
           .then ( response => cars = response )
         )
     let promise_2 = fetch ( "json/mainBannerPictures.json" ) //json/mainBannerPictures.json
-        .then ( response => response.json()                             //http://localhost:3000/mainBannerPictures
+        .then ( response => response.json()                  //http://localhost:3000/mainBannerPictures
           .then ( response => mainBannerPictures = response )
         )
-    await Promise.all ( [ promise_1, promise_2 ] )
+    let promise_3 = fetch ( "json/rentCarCities.json" ) //json/rentCarCities.json
+        .then ( response => response.json()                  //http://localhost:3000/rentCarCities
+          .then ( response => rentCarCities = response )
+    )
+    let promise_4 = fetch ( "json/rentCarPlaces.json" ) //json/rentCarPlaces.json
+        .then ( response => response.json()                  //http://localhost:3000/rentCarPlaces
+          .then ( response => rentCarPlaces = response )
+    )
+    await Promise.all ( [ promise_1, promise_2, promise_3] )
     showCars ()
     // changeMainBannerImage ()
 }
@@ -24,8 +34,7 @@ function addElem ( tagName, container ) {
 }
 
 let transport = []
-
-start ()
+getData ()
 
 function showCars () {
     cars.forEach ( ( item, index ) => {
@@ -52,6 +61,7 @@ function showInformationElement (id) {
 function showRentElement () {
     let rentElement = addElem ("rent-element", document.querySelector('.cars-wrapper'))
 }
+
 
 //Изменение главной картинки
 
