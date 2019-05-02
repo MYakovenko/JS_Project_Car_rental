@@ -89,13 +89,7 @@ class rentElement extends HTMLElement {
             error.textContent = ""
             nameInput.value === "" || emailInput.value === "" || phoneInput.value === "" ? 
                 error.textContent = "Fill out all requered filds" : null
-                error.setAtribute ("style", `
-                    color: red;
-                    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-                    font-weight: 600;
-                    text-align: left;
-                `)
-
+ 
                 addPostRequest(
                     nameInput.value, 
                     emailInput.value, 
