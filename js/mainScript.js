@@ -56,11 +56,20 @@ function showInformationElement (id) {
     infoElement.setInformationElementOverview(cars[id].overview)
     infoElement.setEngineInfo(cars[id].engine)
     infoElement.setPrice(cars[id].price)
+    infoElement.style.display = "block"
+    document.body.classList.add("stop-scroling")
 }
 
 function showRentElement () {
     let rentElement = addElem ("rent-element", document.querySelector('.cars-wrapper'))
 }
+
+//Переключение меню
+
+let mainBanner = document.querySelector('.main_banner')
+let carsWrapper = document.querySelector('.main_banner')
+
+
 
 
 //Изменение главной картинки

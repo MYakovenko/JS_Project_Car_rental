@@ -10,7 +10,6 @@ html {
 }
 
 body {
-	
 	color: #ebf0f5;
 	background: rgb(190, 189, 189);
 	letter-spacing: .05em;
@@ -78,10 +77,14 @@ a:focus {
 	opacity: .7;
 }
 
+.stop-scroling {
+	overflow: hidden;
+}
+
 /*Header*/
 
 .page-wrapper {
-	width: 100vw;
+	width: 100%;
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
@@ -92,7 +95,7 @@ a:focus {
 .header {
 	position: relative;
 	top: 0;
-	width: 100vw;
+	width: 100%;
 	background-color: #0c0105;
 	padding: 3px 5px 0px 5px;
 }
@@ -197,18 +200,19 @@ li.info {
 }
 
 .main_banner_info .title {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .main_banner_info .info {
 	margin-top: 15px;
-	font-size: 0.65rem;
-	margin-bottom: 10px;
+	font-size: 0.6rem;
+	margin-bottom: 5px;
 }
 
 /*Cars Wrapper*/
 .cars-wrapper {
-	display: grid;  
+	display: grid;
+	margin: auto;  
 	grid-template-columns: 1fr 1fr; 
 	width: 90%;
 }
@@ -216,7 +220,7 @@ li.info {
 .cars-wrapper-title {
 	text-align: center;
 	color: #f6f1bf;
-	font:  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+	font: 14px/16px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
 	font-weight: 800;
 	letter-spacing: 0.5em;
 	text-shadow: 2px 2px 2px #000;
@@ -319,10 +323,13 @@ li .phone {
 .cars-wrapper {
 	max-width: 1400px;
 	position: relative;
-	margin: auto;
 	display: grid;  
 	grid-template-columns: 1fr 1fr 1fr;
 
+}
+.cars-wrapper-title {
+	font: 32px/36px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+	font-weight: 800;
 }
 
 }

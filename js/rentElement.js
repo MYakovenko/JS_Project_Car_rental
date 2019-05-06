@@ -7,17 +7,28 @@ class rentElement extends HTMLElement {
         shadow.appendChild(
             rentElementTemplate.content.cloneNode(true)
         )
+        
+        // console.dir(shadow)
 
-        this.findFormElement = function (tagName) {
-             let element = Array.from(shadow.children[0].children[1].children[0]).filter(
-                (elem) => elem.tagName === `${tagName.toUpperCase()}`
-            )
-            return element
+        function getElements (shadowChildren) {
+            let formElem = {}
+            let element = Array.from(shadowChildren)
+            element.forEach ( item => Object.assign(formElem,  {[item.id]: item})) 
+            return formElem
         }
 
-        let citySelect = this.findFormElement("SELECT")[0]
-        let placeSelect = this.findFormElement("SELECT")[1]
-       
+        let elementsWrappers = getElements(shadow.children[0].children[0].children)
+        console.log(elementsWrappers)
+        let formElements = getElements(elementsWrappers["input-holder"].children[0])
+        let additionalformElements = getElements(elementsWrappers["input-holder"].children[0].children)
+
+        let rentElements = Object.assign({}, 
+            elementsWrappers, 
+            formElements,
+            additionalformElements
+        )
+        // console.log(rentElements) 
+              
         function addOption (arr, parentElem) {
             arr.forEach(
                 place => {
@@ -28,79 +39,107 @@ class rentElement extends HTMLElement {
             )
         }
 
-        addOption(rentCarCities, citySelect)
+        addOption(rentCarCities, rentElements["city-select"])
 
-        citySelect.onchange = function (event) {
-            placeSelect.innerHTML = ""
-            event.target.value === "Kiev" ? addOption(rentCarPlaces.Kiev, placeSelect) : 
-                event.target.value === "Kharkiv" ? addOption(rentCarPlaces.Kharkiv, placeSelect) : 
-                    event.target.value === "Lviv" ? addOption(rentCarPlaces.Lviv, placeSelect) :
-                        event.target.value === "Odessa" ? addOption(rentCarPlaces.Odessa, placeSelect) :
-                            null
+        rentElements["city-select"].onchange = function (event) {
+            rentElements["place-select"].innerHTML = ""
+                event.target.value === "Kiev" ? addOption(rentCarPlaces.Kiev, rentElements["place-select"]) : 
+                    event.target.value === "Kharkiv" ? addOption(rentCarPlaces.Kharkiv, rentElements["place-select"]) : 
+                        event.target.value === "Lviv" ? addOption(rentCarPlaces.Lviv, rentElements["place-select"]) :
+                            event.target.value === "Odessa" ? addOption(rentCarPlaces.Odessa, rentElements["place-select"]) :
+                                null
         }
-
-        let nameInput = this.findFormElement("INPUT")[0]
-        let emailInput = this.findFormElement("INPUT")[1]
-        let phoneInput = this.findFormElement("INPUT")[2]
-        let pickUpDate = this.findFormElement("INPUT")[3]
-        let dropOffDate = this.findFormElement("INPUT")[4]
-        let pickUpTime = this.findFormElement("INPUT")[5]
-        let dropOffTime = this.findFormElement("INPUT")[6]
         
-
-        nameInput.onchange = function (event) {
-            event.target.value = event.target.value.split("<").join("&lt;")
+        function checkXSSAtack (text) {
+            var result = text.split("<").join("&lt;")
+            return result
         }
 
-        emailInput.onchange = function (event) {
-            let error = shadow.children[0].children[1].children[0].children[4]
-            error.textContent = ""
-            event.target.setAttribute("style", ``) 
-            event.target.value = event.target.value.split("<").join("&lt;")
+        function chengeElementStyle (elem) {
+            elem.setAttribute("style", `border: 2px solid #F59D9D;`)
+        }
+
+        function showError (errorElem, errorText) {
+            errorElem.textContent = errorText
+        }
+
+        function emailValidation (value) {
             var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
-            if (reg.test(event.target.value) === false)  {
-                event.target.setAttribute("style", `border: 2px solid #F59D9D;`) 
-                error.textContent = "Enter a valid email"
-            }
-        }.bind(this)
+            var result = reg.test(value)
+            return result
+        }
 
-        phoneInput.onchange = function (event) {
-            let error = shadow.children[0].children[1].children[0].children[8]
-            error.textContent = ""
-            event.target.setAttribute("style", ``) 
-            event.target.value = event.target.value.split("<").join("&lt;")
+        function phoneValidation (value) {
             var reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/
-            if (reg.test(event.target.value) === false)  {
-                event.target.setAttribute("style", `border: 2px solid #F59D9D;`) 
-                error.textContent = "Enter a valid phone number"
+            var result = reg.test(value)
+            return result
+        }
+
+        function removeElement (elem) {
+            elem.parentNode.removeChild (elem)
+            document.body.classList.remove("stop-scroling")
+        }
+
+        rentElements["input-name"].onchange = function (event) {
+            event.target.value = checkXSSAtack(event.target.value)
+        }
+
+        rentElements["input-email"].onchange = function (event) {
+            event.target.value = checkXSSAtack(event.target.value)
+            rentElements["email-error"].textContent = ""
+            event.target.setAttribute("style", ``)
+
+            if (emailValidation (event.target.value) === false) {
+                chengeElementStyle(event.target)
+                showError(rentElements["email-error"], "Enter a valid email")
             }
-        }.bind(this)
+        }
 
-        const cancelButton = shadow.children[0].children[1].children[1].children[0]
-        const proceedButton = shadow.children[0].children[1].children[1].children[1]
+        rentElements["input-phone"].onchange = function (event) {
+            event.target.value = checkXSSAtack(event.target.value)
+            rentElements["phone-error"].textContent = ""
+            event.target.setAttribute("style", ``) 
 
-        cancelButton.onclick = function ( event ) {
-            this.parentNode.removeChild (this)
+            if (phoneValidation (event.target.value) === false) {
+                chengeElementStyle(event.target)
+                showError(rentElements["phone-error"], "Enter a valid phone number")
+            }
+        }
+
+       var datаReady = false;
+        function formValidation () {
+            rentElements["input-name"].value === "" || rentElements["input-email"].value === "" || rentElements["input-phone"].value === "" 
+                rentElements["pick-up-date"].value === "" || rentElements["drop-off-date"].value === "" ? null :
+                    !emailValidation(rentElements["input-email"].value) ? null :
+                        !phoneValidation(rentElements["input-phone"].value) ? null :
+                            datаReady = true 
+        }
+    
+        rentElements["cancel-btn"].onclick = function ( event ) {
+            removeElement(this)
             event.preventDefault()
         }.bind(this)
 
-        proceedButton.onclick = function (event) {
-            let error = shadow.children[0].children[1].children[0].children[26]
-            error.textContent = ""
-            nameInput.value === "" || emailInput.value === "" || phoneInput.value === "" ? 
-                error.textContent = "Fill out all requered filds" : null
- 
+        rentElements["process-btn"].onclick = function (event) {
+            rentElements["main-error"].textContent = "";
+            formValidation()
+            if (!datаReady) { 
+                showError (rentElements["main-error"], "Fill out all requered filds")
+            } else {
                 addPostRequest(
-                    nameInput.value, 
-                    emailInput.value, 
-                    phoneInput.value, 
-                    citySelect.value,
-                    placeSelect.value,
-                    pickUpDate.value,
-                    dropOffDate.value,
-                    pickUpTime.value,
-                    dropOffTime.value
-                    )
+                    formElements["input-name"].value, 
+                    formElements["input-email"].value, 
+                    formElements["input-phone"].value, 
+                    formElements["city-select"].value,
+                    formElements["place-select"].value,
+                    formElements["pick-up-date"].value,
+                    formElements["drop-off-date"].value,
+                    formElements["pick-up-time"].value,
+                    formElements["drop-off-time"].value
+                )
+                removeElement(this)
+                addElem ("rental-confirmation", document.querySelector('.cars-wrapper'))
+            }
         }.bind(this)
 
         function addPostRequest (_name, _email, _phone, _city, _place, _pickUpDate, _dropOffDate, _pickUpTime, _dropOffTime) {

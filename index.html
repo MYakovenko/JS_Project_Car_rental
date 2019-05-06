@@ -12,10 +12,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
 	
 	<script src="js/picturefill.js"></script>
-	
 	<script src="js/carElement.js"></script>
 	<script src="js/carInformationElement.js"></script>
 	<script src="js/rentElement.js"></script>
+	<script src="js/rentalConfirmation.js"></script>
 	<script src="js/mainScript.js"></script>
 </head>
 <body>
@@ -74,10 +74,10 @@
 		</div>
 
 
-		<template id="carElement">
+		<template id="car-element">
 				<div class = "car-tank" color = "#f6f1bf"> 
-					<img class = "car-image" src = "">
-					<div class = "car-title"></div>
+					<img id = "car-image" class = "car-image" src = "">
+					<div id = "car-title" class = "car-title"></div>
 				</div>
 				<style>
 					.car-tank {
@@ -87,7 +87,7 @@
 						align-items: center;
 						text-align: center;
 						padding: 10px;
-						margin: 10px	
+						margin: 10px;	
 					}
 					.car-image {
 						width: 90%;
@@ -104,30 +104,53 @@
 						font: 16px/20px "Raleway", "Arial", "Helvetica Neue", sans-serif;
 						font-weight: 800;
 					}
+					@media (max-width: 600px) {
+						.car-tank {
+							padding: 10px;
+							margin: 0;	
+						}
+						.car-title {
+							font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+							font-weight: 600;
+						}
+					}
 				 </style>
 		</template>
 
-		<template id = "carInformationElement">
-			<div class = "car-info-wrapper">
-				<img class = "car-image-info" src = "">
-				<div class = "info-conteiner">
-					<div class = "overview"></div>
-					<div class = "additional-info">
-						<div class = "engine-info"></div>
-						<div class = "price-info"></div>
+		<template id = "car-information-element">
+			<div class = "background">
+				<div class = "car-info-wrapper">
+					<img id="car-img" class = "car-image-info" src = "">
+					<div id = "info-conteiner" class = "info-conteiner">
+						<div id = "overview" class = "overview"></div>
+						<div id = "additional-info" class = "additional-info">
+							<div id = "engine-info" class = "engine-info"></div>
+							<div id = "price-info" class = "price-info"></div>
+						</div>
 					</div>
-				</div>
-				<div class = "buttons-conteiner">
-					<a href = "#" class = "button">Cancel</a>
-					<a href = "#" class = "button">Rent</a>
+					<div id = "buttons-conteiner" class = "buttons-conteiner">
+						<a href = "#" id = "btn-cancel" class = "button">Cancel</a>
+						<a href = "#" id = "btn-rent" class = "button">Rent</a>
+					</div>
 				</div>
 			</div>
 			<style>
-				.car-info-wrapper {
-					width: 45%;
+				.background {
 					position: fixed;
-					top: 0%;
-					left: 25%;
+					width: 100%;
+					background-color: #00000075;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					display: flex;
+					justify-content:center;
+					align-items: center;
+					
+				}
+				.car-info-wrapper {
+					width: 100%;
+					max-width: 600px;
 					display:flex;
 					flex-direction: column;
 					justify-content: center;
@@ -199,55 +222,101 @@
 					background-color: #f6f1bf;
 					color: #797875;
 				}
-
+				@media (max-width: 900px){
+					.car-info-wrapper {
+						width: 60%;
+						left: 15%;
+						}
+					.info-conteiner {
+						flex-direction: column;
+						margin: 0px 20px;
+					}
+					.overview {
+					width: 100%;
+					border-right: none;
+					border-bottom: 1px solid #797875;
+					}
+				}
+				@media (max-width: 600px){
+					.car-info-wrapper {
+						width: 80%;
+						left: 5%;
+						top: 10%;
+						}
+					.overview, .additional-info {
+						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					}
+					a {
+						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+						font-weight: 600;
+						letter-spacing: 0.05em;
+					}
+					.button {
+						padding: 5px 20px;
+					}
+				}
 			 </style>
 		</template>
 
 		<template id = "rent-element">
-			<div class = "rent-wrapper">
-				<h2>RESERVATION</h2>
-				<div class = "input-holder">
-					<form name = "rent-form" action = "http://localhost:3000/rentalRequests" method = "POST">
-							<div class = "error"></div>
-							<label for="input-name">Name*</label>
-							<input id="input-name" type="text" placeholder="Jon Duglas" required name="name"/> 
-							</br>							
-							<div class = "error"></div>
-							<label for="input-email">E-mail*</label>
-							<input id="input-email" type="email" placeholder="jonduglas@mail.com" required name="email"/> 
-							</br>
-							<div class = "error"></div>
-							<label for="input-phone">Phone*</label>
-							<input id="input-phone" type="text" min = "13" max = "13" placeholder="+38-067-329-26-26" required name="phone"/>
-							</br>
-							<label for="city-select">City*</label>
-							<select id="city-select" name="city" required></select> 
-							</br>							
-							<label for="place-select">Place*</label>
-							<select id="place-select" name="place" required></select> 
-							</br>
-							<label class = "date" for="pick-up-date">PICK UP DATE AND TIME*</label>
-							<label class = "date" for="drop-off-date">DROP OFF DATE AND TIME*</label> 
-							</br>
-							<input id = "pick-up-date" type = "date" name = "pick-up-date" required/>
-							<input id = "drop-off-date" type = "date" name = "drop-off-date" required/> 
-							</br>
-							<input id = "pick-up-time" type = "time" name = "pick-up-time"/>
-							<input id = "drop-off-time" type = "time" name = "drop-off-time"/>
-							<div class = "main-error"></div>
-					</form>
-					<div class = "button-wrapper">
-						<button class = 'cancel'>Cancel</button>
-						<button type = "submit">Proceed</button>
+			<div class = "background">
+				<div class = "rent-wrapper">
+					<h2 id = "rent-title">RESERVATION</h2>
+					<div id = "input-holder" class = "input-holder">
+						<form name = "rent-form" action = "http://localhost:3000/rentalRequests" method = "POST">
+								<div id = "name-error" class = "error"></div>
+								<label for="input-name">Name*</label>
+								<input id="input-name" type="text" placeholder="Jon Duglas" required name="name"/> 
+								</br>							
+								<div id = "email-error" class = "error"></div>
+								<label for="input-email">E-mail*</label>
+								<input id="input-email" type="email" placeholder="jonduglas@mail.com" required name="email"/> 
+								</br>
+								<div id = "phone-error" class = "error"></div>
+								<label for="input-phone">Phone*</label>
+								<input id="input-phone" type="text" min = "13" max = "13" placeholder="+38-067-329-26-26" required name="phone"/>
+								</br>
+								<label for="city-select">City*</label>
+								<select id="city-select" name="city" required></select> 
+								</br>							
+								<label for="place-select">Place*</label>
+								<select id="place-select" name="place" required></select> 
+								</br>
+								<label class = "date" for="pick-up-date">PICK UP DATE AND TIME*</label>
+								<label class = "date" for="drop-off-date">DROP OFF DATE AND TIME*</label> 
+								</br>
+								<input id = "pick-up-date" type = "date" name = "pick-up-date" required/>
+								<input id = "drop-off-date" type = "date" name = "drop-off-date" required/> 
+								</br>
+								<input id = "pick-up-time" type = "time" name = "pick-up-time"/>
+								<input id = "drop-off-time" type = "time" name = "drop-off-time"/>
+								<div id = "main-error" class = "main-error"></div>
+								</br>
+								<div class = "button-wrapper">
+								<input type="button" id = "cancel-btn" class = 'cancel' value = "Cancel">
+								<input type = "button" id = "process-btn" value = "Proceed">
+								</div>
+						</form>
 					</div>
 				</div>
 			</div>
 			<style>
-				.rent-wrapper {
-					width: 45%;
+				.background {
 					position: fixed;
-					top: 0%;
-					left: 25%;
+					width: 100%;
+					background-color: #00000075;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					display: flex;
+					justify-content:center;
+					align-items: center;
+					
+				}
+				.rent-wrapper {
+					width: 100%;
+					max-width: 600px;
 					background-color: #f6f1bf;
 					color: #33313b;
 					font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
@@ -331,7 +400,8 @@
 				.button-wrapper {
 					text-align: center;
 				}
-				button {
+				input[type="button"],
+				input[type="submit"] {
 					-webkit-appearance: none;
 					-moz-appearance: none;
 					-ms-appearance: none;
@@ -342,17 +412,116 @@
 					background-color: #797875;
 					border: 2px solid #797875;
 					border-radius: 1.5em;
-					margin-top: 20px;
+					margin: auto;
 					color: #f6f1bf;
 					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
 					font-weight: 800;
 					letter-spacing: 0.1em;
+					outline: none;
 				}
-				button:hover {
+
+				input[type="button"]:hover,
+				input[type="submit"]:hover {
 					background-color: #f6f1bf;
 					color: #797875;
 				}
+				@media (max-width: 900px) {
+					input[type="button"],
+					input[type="submit"] {
+						padding: 5px 20px;
+						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+						font-weight: 600;
+						letter-spacing: 0.05em;
+					}
+				}
+				@media (max-width: 600px) {
+					.rent-wrapper {
+						width: 80%;
+						position: fixed;
+						top: 10%;
+						left: 5%;
+						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+						font-weight: 500;
+						text-shadow: 1px 1px 1px #797875;
+						margin: 10px;
+						padding: 10px;
+					}
+					.input-holder {
+						width: 80%;
+						position: relative;
+						padding: 20px;
+						margin: 10px;
+					}
+
+					input[type="button"],
+					input[type="submit"] {
+						margin-top: 5px;
+					}
+
+					input[type="text"],
+					input[type="email"],
+					select {
+						width: 60%;
+						background-color: #fff;
+						font: 10px/12px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+						font-weight: 400;
+						padding: 5px;
+						margin-bottom: 10px;
+					}
+					label {
+						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+						font-weight: 500;
+						margin-bottom: 5px;
+					}
+					label.date {
+						width: 45%;
+						font: 8px/10px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+						font-weight: 500;
+						margin-top: 10px;
+					}
+				}
+			</style>
+		</template>
+
+		<template id = "rental-confirmation-template">
+			<div class = "background">
+				<div id = "confirmation-wrapper">
+					<div class = "text">Thank you for the request!</div>
+					<div class = "text">We'll get back to you at first opportunity.</div>
+				</div>
 				
+			</div>
+			<style>
+				.background {
+					position: fixed;
+					width: 100%;
+					background-color: #00000075;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					display: flex;
+					justify-content:center;
+					align-items: center;
+				}
+				#confirmation-wrapper {
+					display: flex;
+					flex-direction: column;
+					justify-content:center;
+					align-items: center;
+					width: 100%;
+					max-width: 600px;
+					background-color: #f6f1bf;
+					color: #33313b;
+					font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+					font-weight: 600;
+					text-shadow: 1px 1px 1px #797875;
+					margin: 20px;
+					padding: 50px 20px;
+				}
+				.text{
+					margin-bottom: 20px;
+				}
 			</style>
 		</template>
 

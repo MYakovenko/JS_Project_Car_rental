@@ -3,21 +3,19 @@ class carElement extends HTMLElement {
         super()
         var shadow = this.attachShadow ({mode: 'open'})
 
-        let carElementTemplate = document.getElementById('carElement')
+        let carElementTemplate = document.getElementById('car-element')
         shadow.appendChild(
             carElementTemplate.content.cloneNode(true)
         )
-
-        let addElement = (tagName, parentNode) => parentNode.appendChild(
-            document.createElement(tagName)
-        )
-
-        this.findElement = function (tagName) {
-            let element = Array.from(shadow.children[0].children).find(
-                (elem) => elem.tagName === `${tagName.toUpperCase()}`
-            )
-            return element
+      
+        function getElements (shadowChildren) {
+            let formElem = {}
+            let element = Array.from(shadowChildren)
+            element.forEach ( item => Object.assign(formElem,  {[item.id]: item})) 
+            return formElem
         }
+
+        this.carElements = getElements(shadow.children[0].children)
 
         this.onclick = function(event) {
             let id = this.getAttribute('id')
@@ -26,11 +24,11 @@ class carElement extends HTMLElement {
      
     }
     setImage (url) {
-        this.findElement('IMG').src = url
+        this.carElements["car-image"].src = url
     }
 
     setTitle(text) {
-        this.findElement('DIV').textContent = text
+        this.carElements["car-title"].textContent = text
     }
 
 }
