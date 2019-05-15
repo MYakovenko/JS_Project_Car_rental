@@ -1,534 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Project</title>
-	<link media="all" rel="stylesheet" href="css/normalize.css">
-	<link media="all" rel="stylesheet" href="css/main.css">
-	<link media="all" rel="stylesheet" href="css/icomoon.css">
-	
-	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
-	
-	<script src="js/picturefill.js"></script>
-	<script src="js/carElement.js"></script>
-	<script src="js/carInformationElement.js"></script>
-	<script src="js/rentElement.js"></script>
-	<script src="js/rentalConfirmation.js"></script>
-	<script src="js/mainScript.js"></script>
-</head>
-<body>
-	<div class="page-wrapper">
-		<header class="header">
-			<nav class="nav">
-				<ul class="menu">
-					<li>
-						<div class="hamburger"><a herf="#"><img src='img/icons/png/menu.png'/></a></div>
-						<div class="drop">
-								<ul class="drop-menu">
-									<li><a href="#">Advantage</a></li>
-									<li><a href="#">Our offices</a></li>
-									<li><a href="#">Discount</a></li>
-									<li><a href="#">Statistics</a></li>
-									<li><a href="#">Reviews</a></li>
-									<li><a href="#">Details</a></li>
-									<li><a href="#">Gift</a></li>
-									<li><a href="#">Contacts</a></li>
-								</ul>
-						</div> 
-					</li>
-					<li class="info">
-						<div class="address">
-							<div>Kharkiv, 3, Sumskay st.</div>
-							<div> info@drive.com</div>
-						</div>
-						<div><img src='img/icons/png/map.png'/></div>
-					</li>
-					<li class="info">
-						<div class="phone">
-						<div>+38 (068) 089-48-83</div>
-						<div>+38 (099) 554-93-65</div>
-						</div>
-						<div><img src='img/icons/png/phone-1.png'/></div>
-					</li>
-					<li class="social_icons">
-							<span class="twitter"><a href="https://twitter.com/"><img src='img/icons/png/Twitter-1.png'/></a></span>
-							<span class="instagram"><a href="https://www.instagram.com/"><img src='img/icons/png/instagram-1.png'/></a></span>
-							<span class="facebook"><a href="https://www.facebook.com/"><img src='img/icons/png/facebook-1.png'/></a></span>
-						
-					</li>
-				</ul>
-			</nav>
-		</header>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Project</title>
+		<link media="all" rel="stylesheet" href="css/normalize.css">
+		<link media="all" rel="stylesheet" href="css/main.css">
+		<link media="all" rel="stylesheet" href="css/icomoon.css">
+		<link media="all" rel="stylesheet" href="css/carElement.css">
+		<link media="all" rel="stylesheet" href="css/carInformationElement.css">
+		<link media="all" rel="stylesheet" href="css/rentElement.css">
+		<link media="all" rel="stylesheet" href="css/rentalConfirmation.css">
+		<link media="all" rel="stylesheet" href="css/menu_RentalTerms.css">
+		<link media="all" rel="stylesheet" href="css/menu_discount.css">
+		<link media="all" rel="stylesheet" href="css/menu_whatDoWeOffer.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
 
-		<div class="main_banner">
-			<!--<img class = "main-banner-picture" src="http://hdw7.com/wallpapers/91/black-car-1920x1080.jpg">-->
+	</head>
+	<body>
+		<div class="page-wrapper">
+			<header class="header">
+				<nav class="nav">
+					<ul class="menu">
+						<li>
+							<div class="hamburger"><a herf="#"><img src='img/icons/png/menu.png'/></a></div>
+							<div class="drop">
+									<ul class="drop-menu">
+										<li id = 'main-page-menu'><a href="#">Main page</a></li>
+										<li id = "what-do-we-offer-menu"><a href="#">What do we offer</a></li>
+										<li id = "car-rental-terms-menu"><a href="#">Car rental terms</a></li>
+										<li id = "discount-menu"><a href="#">Discount</a></li>
+									</ul>
+							</div> 
+						</li>
+						<li class="info">
+							<div class="address">
+								<div>Kharkiv, 3, Sumskay st.</div>
+								<div> info@drive.com</div>
+							</div>
+							<div><img src='img/icons/png/map.png'/></div>
+						</li>
+						<li class="info">
+							<div class="phone">
+							<div>+38 (068) 089-48-83</div>
+							<div>+38 (099) 554-93-65</div>
+							</div>
+							<div><img src='img/icons/png/phone-1.png'/></div>
+						</li>
+						<li class="social_icons">
+								<span class="twitter"><a href="https://twitter.com/"><img src='img/icons/png/Twitter-1.png'/></a></span>
+								<span class="instagram"><a href="https://www.instagram.com/"><img src='img/icons/png/instagram-1.png'/></a></span>
+								<span class="facebook"><a href="https://www.facebook.com/"><img src='img/icons/png/facebook-1.png'/></a></span>
+							
+						</li>
+					</ul>
+				</nav>
+			</header>
 
-			<div class="main_banner_info">
-				<div class="title">CAR RENTAL</div>
-				<img src='img/big-logo.png'/>
-				<div class="info">THERE IS NOTHING ON THE ROAD LIKE IT</div>
-				<div class="form-title">Jump in!</div>
+			<div class="main_banner">
+				<div class="main_banner_info">
+					<div class="title">CAR RENTAL</div>
+					<img src='img/big-logo.png'/>
+					<div class="info">THERE IS NOTHING ON THE ROAD LIKE IT</div>
+					<div class="form-title">Jump in!</div>
+				</div>
 			</div>
-		</div>
 
 
-		<template id="car-element">
-				<div class = "car-tank" color = "#f6f1bf"> 
-					<img id = "car-image" class = "car-image" src = "">
-					<div id = "car-title" class = "car-title"></div>
+			<template id="car-element">
+					<div class = "car-tank" color = "#f6f1bf"> 
+						<img id = "car-image" class = "car-image" src = "">
+						<div id = "car-title" class = "car-title"></div>
+					</div>
+					<style>
+						@import "css/carElement.css" screen;
+					</style>
+			</template>
+
+			<template id = "car-information-element">
+				<div class = "background">
+					<div class = "car-info-wrapper">
+						<img id="car-img" class = "car-image-info" src = "">
+						<div id = "info-conteiner" class = "info-conteiner">
+							<div id = "overview" class = "overview"></div>
+							<div id = "additional-info" class = "additional-info">
+								<div id = "engine-info" class = "engine-info"></div>
+								<div id = "price-info" class = "price-info"></div>
+							</div>
+						</div>
+						<div id = "buttons-conteiner" class = "buttons-conteiner">
+							<a href = "#" id = "btn-cancel" class = "button">Cancel</a>
+							<a href = "#" id = "btn-rent" class = "button">Rent</a>
+						</div>
+					</div>
 				</div>
 				<style>
-					.car-tank {
-						display:flex;
-						flex-direction: column;
-						justify-content: center;
-						align-items: center;
-						text-align: center;
-						padding: 10px;
-						margin: 10px;	
-					}
-					.car-image {
-						width: 90%;
-						height: auto;
-						padding: 10px;
-						border: 2px solid #f6f1bf;
-						margin-bottom: 10px;
-					}
-					.car-image:hover {
-						box-shadow: inset 10px 10px 10px #f6f1bf90;
-					}
-					.car-title {
-						color: #f6f1bf;
-						font: 16px/20px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-						font-weight: 800;
-					}
-					@media (max-width: 600px) {
-						.car-tank {
-							padding: 10px;
-							margin: 0;	
-						}
-						.car-title {
-							font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-							font-weight: 600;
-						}
-					}
-				 </style>
-		</template>
+					@import "css/carInformationElement.css" screen;
+				</style>
+			</template>
 
-		<template id = "car-information-element">
-			<div class = "background">
-				<div class = "car-info-wrapper">
-					<img id="car-img" class = "car-image-info" src = "">
-					<div id = "info-conteiner" class = "info-conteiner">
-						<div id = "overview" class = "overview"></div>
-						<div id = "additional-info" class = "additional-info">
-							<div id = "engine-info" class = "engine-info"></div>
-							<div id = "price-info" class = "price-info"></div>
+			<template id = "rent-element">
+				<div class = "background">
+					<div class = "rent-wrapper">
+						<h2 id = "rent-title">RESERVATION</h2>
+						<div id = "input-holder" class = "input-holder">
+							<form id = "rent-form" name = "rent-form" action = "http://localhost:3000/rentalRequests" method = "POST">
+									<div id = "name-error" class = "error"></div>
+									<label for="input-name">Name*</label>
+									<input id="input-name" type="text" placeholder="Jon Duglas" required name="name"/> 
+									</br>							
+									<div id = "email-error" class = "error"></div>
+									<label for="input-email">E-mail*</label>
+									<input id="input-email" type="email" placeholder="jonduglas@mail.com" required name="email"/> 
+									</br>
+									<div id = "phone-error" class = "error"></div>
+									<label for="input-phone">Phone*</label>
+									<input id="input-phone" type="text" min = "13" max = "13" placeholder="+38-067-329-26-26" required name="phone"/>
+									</br>
+									<label for="city-select">City*</label>
+									<select id="city-select" name="city" required></select> 
+									</br>							
+									<label for="place-select">Place*</label>
+									<select id="place-select" name="place" required></select> 
+									</br>
+									<label class = "date" for="pick-up-date">PICK UP DATE AND TIME*</label>
+									<label class = "date" for="drop-off-date">DROP OFF DATE AND TIME*</label> 
+									</br>
+									<input id = "pick-up-date" type = "date" name = "pick-up-date" required/>
+									<input id = "drop-off-date" type = "date" name = "drop-off-date" required/> 
+									</br>
+									<input id = "pick-up-time" type = "time" name = "pick-up-time"/>
+									<input id = "drop-off-time" type = "time" name = "drop-off-time"/>
+									<div id = "main-error" class = "main-error"></div>
+									</br>
+									<div class = "button-wrapper">
+										<input type="button" id = "cancel-btn" class = 'cancel' value = "Cancel">
+										<input type = "button" id = "process-btn" value = "Proceed">
+									</div>
+							</form>
 						</div>
 					</div>
-					<div id = "buttons-conteiner" class = "buttons-conteiner">
-						<a href = "#" id = "btn-cancel" class = "button">Cancel</a>
-						<a href = "#" id = "btn-rent" class = "button">Rent</a>
+				</div>
+				<style>
+					@import "css/rentElement.css" screen;
+				</style>
+			</template>
+
+			<template id = "rental-confirmation-template">
+				<div class = "background">
+					<div id = "confirmation-wrapper">
+						<div class = "text">Thank you for the request!</div>
+						<div class = "text">We'll get in touch with you at first opportunity.</div>
+					</div>
+					
+				</div>
+				<style>
+					@import "css/rentalConfirmation.css" screen;
+				</style>
+			</template>
+			
+			<template id = "template-offer">
+				<div class = "conteiner">
+					<div class = "icons-table">
+					
+						<div class = "offer-item">
+							<img class = "offer-img" src = "img/like1.png">
+							<div class = "offer-text-wrapper">
+								<div class = "offer-title">Easy booking</div>
+								<div class = "offer-text">Simple, few steps online booking</div>
+							</div>
+						</div>
+						
+						<div class = "offer-item">
+							<img class = "offer-img" src = "img/high-quality.png">
+							<div class = "offer-text-wrapper">
+								<div class = "offer-title">Quality vehicles</div>
+								<div class = "offer-text">High quality rental vehicles from a wide range of categories, models and brands.</div>
+							</div>
+						</div>
+					
+						<div class = "offer-item">
+							<img class = "offer-img" src = "img/navigation1.png">
+							<div class = "offer-text-wrapper">
+								<div class = "offer-title">GPS Navigation</div>
+								<div class = "offer-text">Find the most appropriate route with our GPS navigation system.</div>
+							</div>
+						</div>
+					
+						<div class = "offer-item">
+							<img class = "offer-img" src = "img/baby.png">
+							<div class = "offer-text-wrapper">
+								<div class = "offer-title">Child seat</div>
+								<div class = "offer-text">It is important that our child is the most secure during the journey.</div>
+							</div>
+						</div>
+					
+						<div class = "offer-item">
+							<img class = "offer-img" src = "img/transmission1.png">
+							<div class = "offer-text-wrapper">
+								<div class = "offer-title">AT / MT transmission</div>
+								<div class = "offer-text">You can choose a manual or automatic transmission car.</div>
+							</div>
+						</div>
+					
+						<div class = "offer-item">
+							<img class = "offer-img" src = "img/wifi2.png">
+							<div class = "offer-text-wrapper">
+								<div class = "offer-title">Wi-Fi</div>
+								<div class = "offer-text">Stay connected with the internet wherever you go with choosing your car Wi-Fi router.</div>
+							</div>
+						</div>
+					
+					</div>
+
+					<h2>WHAT DO WE OFFER?</h2>
+						
+					<div class = "main-info">
+						<h3>1. Wide range of vehicles - from luxurious premium vehicles to small vehicles.</h3>
+						<p>The vehicle is not a luxury item. It is a mean of transportation. Especially, when the subway could not help. You would need a nimble city vehicle in order to catch up on everything you planned.</p>
+					
+						<h3>2. Engines - petrol, diesel, hybrid and electric.</h3>
+						<p>There is some range of clients that don’t use the vehicles with Internal Combustion Engine principally. So, the EV rental is a trend. Also, Tesla is rented by our clients for test-drives in order to ascertain the EV’s practical use in terms of real use.</p>
+						<p>Sometimes it is uncomfortable to switch from petrol to diesel and vice versa. And if the one does not have a vehicle while waiting for its new ride, the car rental is a perfect decision in order not to change the driver’s skills.</p>
+					
+						<h3>3. Vehicle with driver.</h3>
+						<p>This type of service used not only for important meetings. Imagine you have gone somewhere and your wife’s car is in service for several days. What to do in this situation? Car rental with driver is a good solution.</p>
 					</div>
 				</div>
-			</div>
-			<style>
-				.background {
-					position: fixed;
-					width: 100%;
-					background-color: #00000075;
-					top:0;
-					bottom:0;
-					left:0;
-					right:0;
-					display: flex;
-					justify-content:center;
-					align-items: center;
-					
-				}
-				.car-info-wrapper {
-					width: 100%;
-					max-width: 600px;
-					display:flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					text-align: center;
-					background-color: #f6f1bf;
-					padding: 20px 10px;
-					margin: 10px;	
-				}
-				.info-conteiner {
-					display: flex;
-					flex-direction: row;
-					justify-content: center;
-					align-items: center;
-					margin: 0px 20px;
-				}
-				.additional-info {
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-start;
-					align-items: flex-start;
-				}
-				.car-image-info {
-					width: 90%;
-					height: auto;
-					padding: 10px;
-					border: 2px solid #797875;
-					margin-bottom: 10px;
-				}
-				.overview, .additional-info {
-					color: #000;
-					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 400;
-					padding: 10px;
-					text-align: left;
-				}
-				.overview {
-					width: 80%;
-					border-right: 1px solid #797875;
-					
-				}
-				.price-info {
-					margin-top: 20px;
-					font-weight: 800;
-					text-shadow: 1px 1px 1px #797875;
-				}
-				.buttons-conteiner {
-					display: flex;
-					flex-direction: row;
-					justify-content: flex-end;
-					align-items: flex-end;
-					margin-top: 10px;
-				}
-				a {
-					color: #f6f1bf;
-					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 800;
-					letter-spacing: 0.1em;
-					text-decoration: none;
-				}
-				.button {
-					padding: 7px 40px;
-					margin-right: 10px;
-					background-color: #797875;
-					border: 2px solid #797875;
-					border-radius: 1.5em;
-				}
-				.button:hover {
-					background-color: #f6f1bf;
-					color: #797875;
-				}
-				@media (max-width: 900px){
-					.car-info-wrapper {
-						width: 60%;
-						left: 15%;
-						}
-					.info-conteiner {
-						flex-direction: column;
-						margin: 0px 20px;
-					}
-					.overview {
-					width: 100%;
-					border-right: none;
-					border-bottom: 1px solid #797875;
-					}
-				}
-				@media (max-width: 600px){
-					.car-info-wrapper {
-						width: 80%;
-						left: 5%;
-						top: 10%;
-						}
-					.overview, .additional-info {
-						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					}
-					a {
-						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-						font-weight: 600;
-						letter-spacing: 0.05em;
-					}
-					.button {
-						padding: 5px 20px;
-					}
-				}
-			 </style>
-		</template>
+				<style>
+					@import "css/menu_whatDoWeOffer.css" screen;
+				</style>
+			</template>
 
-		<template id = "rent-element">
-			<div class = "background">
-				<div class = "rent-wrapper">
-					<h2 id = "rent-title">RESERVATION</h2>
-					<div id = "input-holder" class = "input-holder">
-						<form name = "rent-form" action = "http://localhost:3000/rentalRequests" method = "POST">
-								<div id = "name-error" class = "error"></div>
-								<label for="input-name">Name*</label>
-								<input id="input-name" type="text" placeholder="Jon Duglas" required name="name"/> 
-								</br>							
-								<div id = "email-error" class = "error"></div>
-								<label for="input-email">E-mail*</label>
-								<input id="input-email" type="email" placeholder="jonduglas@mail.com" required name="email"/> 
-								</br>
-								<div id = "phone-error" class = "error"></div>
-								<label for="input-phone">Phone*</label>
-								<input id="input-phone" type="text" min = "13" max = "13" placeholder="+38-067-329-26-26" required name="phone"/>
-								</br>
-								<label for="city-select">City*</label>
-								<select id="city-select" name="city" required></select> 
-								</br>							
-								<label for="place-select">Place*</label>
-								<select id="place-select" name="place" required></select> 
-								</br>
-								<label class = "date" for="pick-up-date">PICK UP DATE AND TIME*</label>
-								<label class = "date" for="drop-off-date">DROP OFF DATE AND TIME*</label> 
-								</br>
-								<input id = "pick-up-date" type = "date" name = "pick-up-date" required/>
-								<input id = "drop-off-date" type = "date" name = "drop-off-date" required/> 
-								</br>
-								<input id = "pick-up-time" type = "time" name = "pick-up-time"/>
-								<input id = "drop-off-time" type = "time" name = "drop-off-time"/>
-								<div id = "main-error" class = "main-error"></div>
-								</br>
-								<div class = "button-wrapper">
-								<input type="button" id = "cancel-btn" class = 'cancel' value = "Cancel">
-								<input type = "button" id = "process-btn" value = "Proceed">
-								</div>
-						</form>
+			<template id = "rental-terms-template">
+				<div class = "conteiner">
+					<h2>CAR RENTAL TERMS</h2>
+					<div class = "info-wrapper">
+							<h3>Renters minimal age</h3>
+							<p>Minimal driver's age should be not less than 23 years old</p>
+						
+							<h3>Territory of vehicle use</h3>
+							<p>It is restricted to cross the border of Ukraine without the prior documentary access of DRIVE Rental company</p>
+						
+							<h3>Insurance</h3>
+							<p>All vehicles are insured in terms of the obliged civic liability and CASCO. Standard insurance does not cover the renter's liability in case of a traffic accident or vehicle theft.</p>
+							
+							<h3>Deposit</h3>
+							<p>Deposit amount depends on the class of vehicle. Deposit is given while car rental contract signing and given back to the Renter while vehicle drop-off in case all contract point are fulfilled.</p>
+						
+							<h3>Rates</h3>
+							<p>VAT, maintenance and seasonal tires change are included in the rate. Rental begins from the moment of contract signing. Delay of return for 2 hours or more considered as the next rental day.</p>
 					</div>
 				</div>
-			</div>
-			<style>
-				.background {
-					position: fixed;
-					width: 100%;
-					background-color: #00000075;
-					top:0;
-					bottom:0;
-					left:0;
-					right:0;
-					display: flex;
-					justify-content:center;
-					align-items: center;
-					
-				}
-				.rent-wrapper {
-					width: 100%;
-					max-width: 600px;
-					background-color: #f6f1bf;
-					color: #33313b;
-					font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 600;
-					text-shadow: 1px 1px 1px #797875;
-					margin: 20px;
-					padding: 20px;
-				}
-				.input-holder {
-					width: 90%;
-					border: 2px solid #797875;
-					padding: 20px;
-					padding-left: 6%;
-				}
-				input[type="text"],
-				input[type="email"],
-				select {
-					display: inline-block;
-					width: 60%;
-					background-color: #fff;
-					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					color: #33313b;
-					font-weight: 600;
-					padding: 7px;
-					margin-bottom: 20px;
-					border: none;
-				}
-				input[type="date"],
-				input[type="time"] {
-					width: 40%;
-					display: inline-block;
-					margin-right: 5%;
-					margin-bottom: 10px;
-				}
-				::-ms-input-placeholder,
-				::-webkit-input-placeholder,
-				::-moz-input-placeholde{
-					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					color: #ABABAB;
-					font-weight: 300;
-				}
-				select {
-					width: calc(60% + 15px);
-					-webkit-appearance: none;
-					-moz-appearance: none;
-					-ms-appearance: none;
-					appearance: none!important;
-					text-indent: 0.01px; 
-					text-overflow: '';
-					color: #33313b;
-					line-height: 1em;
-				}
-				label {
-					display:inline-block;
-					width: 20%; 
-					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 600;
-					color: #33313b;
-					margin-bottom: 5px;
-				}
-				label.date {
-					width: 45%;
-					font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 600;
-					margin-top: 10px;
-				}
-				.error {
-					font: 10px/12px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 500;
-					color: #33313b;
-					margin-left: 22%;
-					text-shadow: none;
-				}
-				.main-error {
-                    color: #EE5656;
-                    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-                    font-weight: 600;
-                    text-align: left;
-					text-shadow: 1px 1px #33313b;
-				}
-				.button-wrapper {
-					text-align: center;
-				}
-				input[type="button"],
-				input[type="submit"] {
-					-webkit-appearance: none;
-					-moz-appearance: none;
-					-ms-appearance: none;
-					appearance: none!important;
-					display: inline;
-					padding: 7px 40px;
-					margin-right: 10px;
-					background-color: #797875;
-					border: 2px solid #797875;
-					border-radius: 1.5em;
-					margin: auto;
-					color: #f6f1bf;
-					font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 800;
-					letter-spacing: 0.1em;
-					outline: none;
-				}
-
-				input[type="button"]:hover,
-				input[type="submit"]:hover {
-					background-color: #f6f1bf;
-					color: #797875;
-				}
-				@media (max-width: 900px) {
-					input[type="button"],
-					input[type="submit"] {
-						padding: 5px 20px;
-						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-						font-weight: 600;
-						letter-spacing: 0.05em;
-					}
-				}
-				@media (max-width: 600px) {
-					.rent-wrapper {
-						width: 80%;
-						position: fixed;
-						top: 10%;
-						left: 5%;
-						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-						font-weight: 500;
-						text-shadow: 1px 1px 1px #797875;
-						margin: 10px;
-						padding: 10px;
-					}
-					.input-holder {
-						width: 80%;
-						position: relative;
-						padding: 20px;
-						margin: 10px;
-					}
-
-					input[type="button"],
-					input[type="submit"] {
-						margin-top: 5px;
-					}
-
-					input[type="text"],
-					input[type="email"],
-					select {
-						width: 60%;
-						background-color: #fff;
-						font: 10px/12px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-						font-weight: 400;
-						padding: 5px;
-						margin-bottom: 10px;
-					}
-					label {
-						font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-						font-weight: 500;
-						margin-bottom: 5px;
-					}
-					label.date {
-						width: 45%;
-						font: 8px/10px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-						font-weight: 500;
-						margin-top: 10px;
-					}
-				}
-			</style>
-		</template>
-
-		<template id = "rental-confirmation-template">
-			<div class = "background">
-				<div id = "confirmation-wrapper">
-					<div class = "text">Thank you for the request!</div>
-					<div class = "text">We'll get back to you at first opportunity.</div>
-				</div>
-				
-			</div>
-			<style>
-				.background {
-					position: fixed;
-					width: 100%;
-					background-color: #00000075;
-					top:0;
-					bottom:0;
-					left:0;
-					right:0;
-					display: flex;
-					justify-content:center;
-					align-items: center;
-				}
-				#confirmation-wrapper {
-					display: flex;
-					flex-direction: column;
-					justify-content:center;
-					align-items: center;
-					width: 100%;
-					max-width: 600px;
-					background-color: #f6f1bf;
-					color: #33313b;
-					font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-					font-weight: 600;
-					text-shadow: 1px 1px 1px #797875;
-					margin: 20px;
-					padding: 50px 20px;
-				}
-				.text{
-					margin-bottom: 20px;
-				}
-			</style>
-		</template>
-
-		<h3 class = 'cars-wrapper-title'>AVAILABLE VEHICLES</h3>
-		<div class = 'cars-wrapper'></div>
+						
+						<style>
+							@import "css/menu_RentalTerms.css" screen;
 		
-	</div>
-	
-</body>
+						</style>
+			</template>
+
+			<template id = "discount-template">
+				<div class = "conteiner">
+					<h2>DISCOUNT</h2>
+					<div class = "info-wrapper">
+						<p>Looking for unbeatable deals on a car rental? Rent a car with DRIVE for a long period and you'll save up to 30%* on your rental car reservation.</p>
+					
+						<table>
+							<caption>Rent a car for a period more, then:</caption>
+							<tr> 
+							<th>Days</th> 
+							<th>Discount</th> 
+							</tr>
+								<tr> 
+							<td>5 days</td> 
+							<td>10%</td>
+							</tr>
+								<tr> 
+							<td>10 days</td>
+							<td>20%</td>
+							</tr>
+								<tr>
+							<td>20 days</td>
+							<td>30%</td>
+							</tr>
+						</table>
+				</div>
+				</div>>
+				
+				<style>
+					@import "css/menu_discount.css" screen;
+				</style>
+			</template>
+
+			<h3 class = 'cars-wrapper-title'>AVAILABLE VEHICLES</h3>
+			<div class = 'cars-wrapper'></div>
+		</div>
+		<div class = "page-changing"></div>
+		
+		<script src="js/picturefill.js"></script>
+		<script src="js/carElement.js"></script>
+		<script src="js/carInformationElement.js"></script>
+		<script src="js/rentElement.js"></script>
+		<script src="js/rentalConfirmation.js"></script>
+		<script src="js/menuWhatDoWeOffer.js"></script>
+		<script src="js/menuRentalTerms.js"></script>
+		<script src="js/menuDiscount.js"></script>
+		<script src="js/mainScript.js"></script>
+	</body>
 </html>

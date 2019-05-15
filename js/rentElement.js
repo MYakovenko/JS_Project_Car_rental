@@ -7,8 +7,6 @@ class rentElement extends HTMLElement {
         shadow.appendChild(
             rentElementTemplate.content.cloneNode(true)
         )
-        
-        // console.dir(shadow)
 
         function getElements (shadowChildren) {
             let formElem = {}
@@ -17,17 +15,13 @@ class rentElement extends HTMLElement {
             return formElem
         }
 
-        let elementsWrappers = getElements(shadow.children[0].children[0].children)
-        console.log(elementsWrappers)
-        let formElements = getElements(elementsWrappers["input-holder"].children[0])
-        let additionalformElements = getElements(elementsWrappers["input-holder"].children[0].children)
+        let rentForm = shadow.querySelector("form")
+        let rentButtons = shadow.querySelector(".button-wrapper")
 
         let rentElements = Object.assign({}, 
-            elementsWrappers, 
-            formElements,
-            additionalformElements
+            getElements(rentForm.children),
+            getElements(rentButtons.children)
         )
-        // console.log(rentElements) 
               
         function addOption (arr, parentElem) {
             arr.forEach(
@@ -127,15 +121,15 @@ class rentElement extends HTMLElement {
                 showError (rentElements["main-error"], "Fill out all requered filds")
             } else {
                 addPostRequest(
-                    formElements["input-name"].value, 
-                    formElements["input-email"].value, 
-                    formElements["input-phone"].value, 
-                    formElements["city-select"].value,
-                    formElements["place-select"].value,
-                    formElements["pick-up-date"].value,
-                    formElements["drop-off-date"].value,
-                    formElements["pick-up-time"].value,
-                    formElements["drop-off-time"].value
+                    rentElements["input-name"].value, 
+                    rentElements["input-email"].value, 
+                    rentElements["input-phone"].value, 
+                    rentElements["city-select"].value,
+                    rentElements["place-select"].value,
+                    rentElements["pick-up-date"].value,
+                    rentElements["drop-off-date"].value,
+                    rentElements["pick-up-time"].value,
+                    rentElements["drop-off-time"].value
                 )
                 removeElement(this)
                 addElem ("rental-confirmation", document.querySelector('.cars-wrapper'))

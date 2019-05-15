@@ -1,0 +1,111 @@
+.conteiner {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f6f1bf;
+    border: 3px solid #000;
+    }
+h2 {
+    text-align: center;
+    color: #f6f1bf;
+    font: 32px/36px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.5em;
+    text-shadow: 2px 2px 2px #000;
+    margin-top: 5%; 
+}
+h3 {
+    color: #000;
+    font: 16px/18px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    margin-top: 20px;
+}
+p {
+    color: #33313b;
+    font: 16px/18px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: left;
+}
+table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    border: 2px solid grey;
+    font: 16px/18px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+caption {
+    color: #000;
+    font: 16px/18px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+    }
+th,
+td {
+    color: #000;
+    border: 2px solid #000;
+    padding: 15px 20px; 
+    background-color: rgb(177, 173, 173);
+    letter-spacing: 0.2em;
+}
+th{
+    color: #f6f1bf;
+    text-shadow: 1px 1px 1px #515057;
+    background-color: #515057;
+}
+
+@media (max-width: 600px) {
+    .info-wrapper {
+        width: 90%;
+        padding: 10px;
+    }
+    h2 {
+        font: 14px/16px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 800;
+        margin-top: 5%; 
+    }
+    p {
+        font: 12px/14px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    table {
+        border: 2px solid grey;
+        font: 14px/16px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    caption {
+        font: 14px/16px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        margin-bottom: 5px;
+        }
+    th,
+    td {
+        border: 2px solid #000;
+        padding: 10px 15px; 
+        letter-spacing: 0.1em;
+    }
+    th{
+        color: #f6f1bf;
+        text-shadow: 1px 1px 1px #515057;
+        background-color: #515057;
+    }
+}

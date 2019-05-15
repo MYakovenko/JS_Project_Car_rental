@@ -15,16 +15,16 @@ class carInformationElement extends HTMLElement {
             return formElem
         }
 
-        let elementsWrappers = getElements(shadow.children[0].children[0].children)
-        let infoElements = getElements(elementsWrappers['info-conteiner'].children)
-        let additionalInfoElements = getElements(infoElements['additional-info'].children)
-        let buttons = getElements(elementsWrappers['buttons-conteiner'].children)
+        let carInfoWrapper = shadow.querySelector(".car-info-wrapper")
+        let infoComteiner = shadow.querySelector("#info-conteiner")
+        let additionalInfo = shadow.querySelector("#additional-info")
+        let buttons = shadow.querySelector("#buttons-conteiner")
 
         this.carInformationElements = Object.assign({}, 
-            elementsWrappers, 
-            infoElements,
-            additionalInfoElements,
-            buttons
+            getElements(carInfoWrapper.children),
+            getElements(infoComteiner.children),
+            getElements(additionalInfo.children),
+            getElements(buttons.children)
         )
 
         this.carInformationElements["btn-cancel"].onclick = function ( event ) {

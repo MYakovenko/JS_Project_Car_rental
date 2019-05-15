@@ -1,0 +1,179 @@
+.background {
+    position: fixed;
+    width: 100%;
+    background-color: #00000075;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+.rent-wrapper {
+    width: 100%;
+    max-width: 600px;
+    background-color: #f6f1bf;
+    color: #33313b;
+    font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #797875;
+    margin: 20px;
+    padding: 20px;
+}
+.input-holder {
+    width: 90%;
+    border: 2px solid #797875;
+    padding: 20px;
+    padding-left: 6%;
+}
+input[type="text"],
+input[type="email"],
+select {
+    display: inline-block;
+    width: 60%;
+    background-color: #fff;
+    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    color: #33313b;
+    font-weight: 600;
+    padding: 7px;
+    margin-bottom: 20px;
+    border: none;
+}
+input[type="date"],
+input[type="time"] {
+    width: 40%;
+    display: inline-block;
+    margin-right: 5%;
+    margin-bottom: 10px;
+}
+::-ms-input-placeholder,
+::-webkit-input-placeholder,
+::-moz-input-placeholde{
+    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    color: #ABABAB;
+    font-weight: 300;
+}
+select {
+    width: calc(60% + 15px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none!important;
+    text-indent: 0.01px; 
+    text-overflow: '';
+    color: #33313b;
+    line-height: 1em;
+}
+label {
+    display:inline-block;
+    width: 20%; 
+    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    color: #33313b;
+    margin-bottom: 5px;
+}
+label.date {
+    width: 45%;
+    font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.error {
+    font: 10px/12px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    color: #33313b;
+    margin-left: 22%;
+    text-shadow: none;
+}
+.main-error {
+    color: #EE5656;
+    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    text-shadow: 1px 1px #33313b;
+}
+.button-wrapper {
+    text-align: center;
+}
+input[type="button"],
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none!important;
+    display: inline;
+    padding: 7px 40px;
+    margin-right: 10px;
+    background-color: #797875;
+    border: 2px solid #797875;
+    border-radius: 1.5em;
+    margin: auto;
+    color: #f6f1bf;
+    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    outline: none;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: #f6f1bf;
+    color: #797875;
+}
+@media (max-width: 900px) {
+    input[type="button"],
+    input[type="submit"] {
+        padding: 5px 20px;
+        font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+}
+@media (max-width: 600px) {
+    .rent-wrapper {
+        width: 80%;
+        position: fixed;
+        top: 10%;
+        left: 5%;
+        font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 500;
+        text-shadow: 1px 1px 1px #797875;
+        margin: 10px;
+        padding: 10px;
+    }
+    .input-holder {
+        width: 80%;
+        position: relative;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    input[type="button"],
+    input[type="submit"] {
+        margin-top: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 60%;
+        background-color: #fff;
+        font: 10px/12px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 400;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    label {
+        font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    label.date {
+        width: 45%;
+        font: 8px/10px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+}

@@ -1,34 +1,28 @@
 class carElement extends HTMLElement {
     constructor() {
         super()
-        var shadow = this.attachShadow ({mode: 'open'})
+        this.shadow = this.attachShadow ({mode: 'open'})
 
         let carElementTemplate = document.getElementById('car-element')
-        shadow.appendChild(
+        this.shadow.appendChild(
             carElementTemplate.content.cloneNode(true)
         )
       
-        function getElements (shadowChildren) {
-            let formElem = {}
-            let element = Array.from(shadowChildren)
-            element.forEach ( item => Object.assign(formElem,  {[item.id]: item})) 
-            return formElem
-        }
-
-        this.carElements = getElements(shadow.children[0].children)
-
         this.onclick = function(event) {
             let id = this.getAttribute('id')
             showInformationElement(id)  
         }
      
     }
-    setImage (url) {
-        this.carElements["car-image"].src = url
-    }
 
-    setTitle(text) {
-        this.carElements["car-title"].textContent = text
+    static get observedAttributes() {
+        return [ 'img', 'title']
+    }
+    attributeChangedCallback( attrName, oldVal, newVal ){
+        attrName === 'img' ? 
+                this.shadow.querySelector("#car-image").src = newVal : null
+        attrName === 'title' ? 
+                this.shadow.querySelector("#car-title").innerText = newVal : null
     }
 
 }

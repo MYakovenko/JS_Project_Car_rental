@@ -93,8 +93,10 @@ a:focus {
 }
 
 .header {
-	position: relative;
-	top: 0;
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index:10;
 	width: 100%;
 	background-color: #0c0105;
 	padding: 3px 5px 0px 5px;
@@ -124,7 +126,7 @@ ul {
 	padding: 10px 0px;
 	text-align: left;
 	color: #f6f1bf;
-	font-size: 0.3rem;
+	font-size: 0.5rem;
 	font-weight: 300;
 }
 
@@ -141,8 +143,7 @@ li.info {
 }
 
 .drop {
-	width: 400%;
-	padding-left: 15px;
+	width: 200px;
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -152,16 +153,19 @@ li.info {
 }
 
 .drop-menu a {
+	margin-left: 15px;
 	color: #f3eebd;
 	opacity: 1;
+	font-weight: 300px;
 }
 
 .drop-menu li {
-	margin-left: 15px;
+	padding: 0;
+	margin: 10px 0;
 	margin-top: 0;
 	font-size: 0.7rem;
 	line-height: 1.3rem;
-	transition: .5s ease-in-out;
+	transition: .2s ease-in-out; 
 }
 
 .menu a:hover img{
@@ -172,8 +176,12 @@ li.info {
 	display: block;
 }
 
-.drop-menu li:hover a {
-	font-weight: 600;
+.drop-menu li:hover {
+	background-color: #f3eebd;
+	color: #0c0105;
+}
+.drop-menu li:hover a{
+	color: #0c0105;
 }
 
 /*Main_banner*/
@@ -181,18 +189,19 @@ li.info {
 .main_banner {
 	background: url("http://hdw7.com/wallpapers/91/black-car-1920x1080.jpg") center top no-repeat;
 	background-size: cover;
-	height: 350px;
+	height: 250px;
 
 	display: flex;
 	justify-content: top;
 	align-items: flex-end;
 	flex-direction: column; 
+	transition: all 0.5s;
 }
 
 .main_banner_info {
 	width: 35%;
 	text-align: center;
-	margin: 2% 5%;
+	margin: 15% 5%;
 	color: #797875;
 	font-size: 0.5rem;
 	line-height: 0.75rem;
@@ -204,7 +213,7 @@ li.info {
 }
 
 .main_banner_info .info {
-	margin-top: 15px;
+	margin-top: 10px;
 	font-size: 0.6rem;
 	margin-bottom: 5px;
 }
@@ -227,109 +236,113 @@ li.info {
 	margin-top: 20px;
 }
 
+@media (min-width: 600px) {
+	.main_banner {
+		min-height: 500px; 
+	}
 
-@media (min-width: 800px) {
+}
+
+@media (min-width: 900px) {
 	html {
 	font: 24px/32px "Raleway", "Arial", "Helvetica Neue", sans-serif;
-}
+	}
 
-.page-wrapper {
-	max-width: 100vw;
-	margin: auto;
-}
+	.page-wrapper {
+		max-width: 100vw;
+		margin: auto;
+	}
 
-/*Header*/
+	/*Header*/
 
-.header {
-	padding: 5px;
-}
+	.header {
+		padding: 5px;
+		position: fixed;
+		top:0;
+		left: 0;
+		z-index:10;
+	}
 
-.menu {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-shrink: 0;
-	margin: 0;
-}
+	.menu {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-shrink: 0;
+		margin: 0;
+	}
 
-.menu img {
-	height: 30px;
-}
+	.menu img {
+		height: 30px;
+	}
 
-.menu li {
-	margin: 0;
-	font-size: 0.75rem;
-	line-height: 2rem;
-	font-weight: 300;
-}
+	.menu li {
+		margin: 0;
+		font-size: 0.7rem;
+		line-height: 1rem;
+		font-weight: 300;
+	}
 
-.menu li {
-	position: relative;
-	padding: 10px;
-	text-align: left;
-	color: #f6f1bf;
-	font-size: 0.75rem;
-	line-height: 1rem;
-	font-weight: 300;
-}
+	li.info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-li.info {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
+	li .address,
+	li .phone {
+		margin-right: 20px;
+	}
+	.drop {
+		width: 300px;
+	}
 
-li .address,
-li .phone {
-	margin-right: 20px;
-}
+	.drop-menu {
+		padding: 20px 0;
+	}
 
-.drop-menu {
-	padding: 20px 0;
-}
+	.drop-menu li {
+		padding: 0;
+		margin: 10px 0;
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
 
-.drop-menu li {
-	padding: 0;
-	margin: 10px 0;
-	font-size: 1rem;
-	line-height: 2rem;
-}
+	/*Main_banner*/
 
-/*Main_banner*/
+	.main_banner {
+		min-height: 650px; 
+		margin-top: 70px;
+	}
 
-.main_banner {
-	height: 700px; 
-}
+	.main_banner_info {
+		width: 25%;
+		margin: 2% 7%;
+		font-size: 0.75rem;
+		line-height: 1rem;
+		font-weight: 900;
+	}
 
-.main_banner_info {
-	width: 25%;
-	margin: 2% 7%;
-	font-size: 0.75rem;
-	line-height: 1rem;
-	font-weight: 900;
-}
+	.main_banner_info .title {
+		margin-bottom: 20px;
+	}
 
-.main_banner_info .title {
-	margin-bottom: 20px;
-}
+	.main_banner_info .info {
+		margin-top: 20px;
+		font-size: 1rem;
+		line-height: 1.2rem;
+	}
 
-.main_banner_info .info {
-	margin-top: 20px;
-	font-size: 1rem;
-	line-height: 1.2rem;
-}
+	/*Cars Wrapper*/
+	.cars-wrapper {
+		max-width: 1400px;
+		position: relative;
+		display: grid;  
+		grid-template-columns: 1fr 1fr 1fr;
 
-/*Cars Wrapper*/
-.cars-wrapper {
-	max-width: 1400px;
-	position: relative;
-	display: grid;  
-	grid-template-columns: 1fr 1fr 1fr;
-
-}
-.cars-wrapper-title {
-	font: 32px/36px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
-	font-weight: 800;
-}
+	}
+	.cars-wrapper-title {
+		font: 32px/36px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
+		font-weight: 800;
+	}
 
 }

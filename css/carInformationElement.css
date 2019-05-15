@@ -1,0 +1,121 @@
+.background {
+    position: fixed;
+    width: 100%;
+    background-color: #00000075;
+    top: 0px;
+    bottom:0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;   
+}
+.car-info-wrapper {
+    width: 100%;
+    max-width: 650px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f6f1bf;
+    padding: 20px 10px;
+    margin: 10px;	
+    margin-top: 70px;
+}
+.info-conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+}
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.car-image-info {
+    width: 85%;
+    height: auto;
+    padding: 10px;
+    border: 2px solid #797875;
+    margin-bottom: 10px;
+}
+.overview, .additional-info {
+    color: #000;
+    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    padding: 10px;
+    text-align: left;
+}
+.overview {
+    width: 80%;
+    border-right: 1px solid #797875;
+    
+}
+.price-info {
+    margin-top: 20px;
+    font-weight: 800;
+    text-shadow: 1px 1px 1px #797875;
+}
+.buttons-conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+a {
+    color: #f6f1bf;
+    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
+.button {
+    padding: 7px 40px;
+    margin-right: 10px;
+    background-color: #797875;
+    border: 2px solid #797875;
+    border-radius: 1.5em;
+}
+.button:hover {
+    background-color: #f6f1bf;
+    color: #797875;
+}
+@media (max-width: 900px){
+
+    .car-info-wrapper {
+        width: 60%;
+        margin-top: 60px;
+        }
+    .info-conteiner {
+        flex-direction: column;
+        margin: 0px 20px;
+    }
+    .overview {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #797875;
+    }
+}
+@media (max-width: 600px){
+
+    .car-info-wrapper {
+        margin-top: 60px;
+        width: 80%;
+        }
+    .overview, .additional-info {
+        font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    }
+    a {
+        font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+    .button {
+        padding: 5px 20px;
+    }
+}

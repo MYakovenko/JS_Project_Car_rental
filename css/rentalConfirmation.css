@@ -1,0 +1,30 @@
+.background {
+    position: fixed;
+    width: 100%;
+    background-color: #00000075;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+#confirmation-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #f6f1bf;
+    color: #33313b;
+    font: 16px/18px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #797875;
+    margin: 20px;
+    padding: 50px 20px;
+}
+.text{
+    margin-bottom: 20px;
+}
