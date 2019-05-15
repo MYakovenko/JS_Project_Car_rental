@@ -4,19 +4,19 @@ let rentCarCities = null
 let rentCarPlaces = null
 
 async function getData () {
-    let promise_1 = fetch ( "//json/carsInfo.json" ) //json/carsInfo.json
+    let promise_1 = fetch ( "json/carsInfo.json" ) //json/carsInfo.json
         .then ( response => response.json()        //http://localhost:3000/carsInfo
           .then ( response => cars = response )
         )
-    let promise_2 = fetch ( "//json/mainBannerPictures.json" ) //json/mainBannerPictures.json
+    let promise_2 = fetch ( "json/mainBannerPictures.json" ) //json/mainBannerPictures.json
         .then ( response => response.json()                  //http://localhost:3000/mainBannerPictures
           .then ( response => mainBannerPictures = response )
         )
-    let promise_3 = fetch ( "//json/rentCarCities.json" ) //json/rentCarCities.json
+    let promise_3 = fetch ( "json/rentCarCities.json" ) //json/rentCarCities.json
         .then ( response => response.json()                  //http://localhost:3000/rentCarCities
           .then ( response => rentCarCities = response )
     )
-    let promise_4 = fetch ( "//json/rentCarPlaces.json" ) //json/rentCarPlaces.json
+    let promise_4 = fetch ( "json/rentCarPlaces.json" ) //json/rentCarPlaces.json
         .then ( response => response.json()                  //http://localhost:3000/rentCarPlaces
           .then ( response => rentCarPlaces = response )
     )
