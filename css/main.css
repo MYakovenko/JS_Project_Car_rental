@@ -96,7 +96,6 @@ a:focus {
 	position: fixed;
 	top:0;
 	left: 0;
-	z-index:10;
 	width: 100%;
 	background-color: #0c0105;
 	padding: 3px 5px 0px 5px;
@@ -187,7 +186,7 @@ li.info {
 /*Main_banner*/
 
 .main_banner {
-	background: url("http://hdw7.com/wallpapers/91/black-car-1920x1080.jpg") center top no-repeat;
+	background: url("http://hdw7.com/wallpapers/91/black-car-1920x1080.jpg") center center no-repeat;
 	background-size: cover;
 	height: 250px;
 

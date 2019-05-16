@@ -4,20 +4,20 @@ let rentCarCities = null
 let rentCarPlaces = null
 
 async function getData () {
-    let promise_1 = fetch ( "json/carsInfo.json" ) //json/carsInfo.json
-        .then ( response => response.json()        //http://localhost:3000/carsInfo
+    let promise_1 = fetch ( "json/carsInfo.json" ) // GitHub - json/carsInfo.json
+        .then ( response => response.json()                     //http://localhost:3000/carsInfo
           .then ( response => cars = response )
         )
-    let promise_2 = fetch ( "json/mainBannerPictures.json" ) //json/mainBannerPictures.json
-        .then ( response => response.json()                  //http://localhost:3000/mainBannerPictures
+    let promise_2 = fetch ( "json/mainBannerPictures.json" ) // GitHub - json/mainBannerPictures.json
+        .then ( response => response.json()                             //http://localhost:3000/mainBannerPictures
           .then ( response => mainBannerPictures = response )
         )
-    let promise_3 = fetch ( "json/rentCarCities.json" ) //json/rentCarCities.json
-        .then ( response => response.json()                  //http://localhost:3000/rentCarCities
+    let promise_3 = fetch ( "json/rentCarCities.json" ) // GitHub - json/rentCarCities.json
+        .then ( response => response.json()                         //http://localhost:3000/rentCarCities
           .then ( response => rentCarCities = response )
     )
-    let promise_4 = fetch ( "json/rentCarPlaces.json" ) //json/rentCarPlaces.json
-        .then ( response => response.json()                  //http://localhost:3000/rentCarPlaces
+    let promise_4 = fetch ( "json/rentCarPlaces.json" ) // GitHub - json/rentCarPlaces.json
+        .then ( response => response.json()                          //http://localhost:3000/rentCarPlaces
           .then ( response => rentCarPlaces = response )
     )
     await Promise.all ( [ promise_1, promise_2, promise_3, promise_4] )
@@ -129,23 +129,23 @@ window.onhashchange = function ( event ) {
 
         case "#1":
             window.scrollTo(0,0)
-            menuElements.mainBanner.style.background = `url(${mainBannerPictures[0]}) center center no-repeat`
+            menuElements.mainBanner.style.background = `url(${mainBannerPictures[9]}) right center no-repeat`
             hideElements()
             saveStorage ()
             addElem ("what-do-we-offer", menuElements.menuWrapper)
             break
 
         case "#2":
-            window.scrollTo(0,0)
-            menuElements.mainBanner.style.background = `url(${mainBannerPictures[6]}) center center no-repeat`
+            window.scrollTo(0,0)                  
+            menuElements.mainBanner.style.background = `url(${mainBannerPictures[0]}) right center no-repeat`
             hideElements()
             saveStorage ()
             addElem ("menu-rental-terms", menuElements.menuWrapper)
             break
 
         case "#3":
-            window.scrollTo(0,0)
-            menuElements.mainBanner.style.background = `url(${mainBannerPictures[2]}) center center no-repeat`
+            window.scrollTo(0,0)            
+            menuElements.mainBanner.style.background = `url(${mainBannerPictures[8]}) center center no-repeat`
             hideElements()
             saveStorage ()
             addElem ("menu-discount", menuElements.menuWrapper)
