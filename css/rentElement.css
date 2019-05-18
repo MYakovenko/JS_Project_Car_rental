@@ -30,13 +30,15 @@
 }
 input[type="text"],
 input[type="email"],
+input[type="date"],
+input[type="time"],
 select {
     display: inline-block;
     width: 60%;
     background-color: #fff;
-    font: 14px/16px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font: 14px/16px "Raleway", "Helvetica Neue", sans-serif;
     color: #33313b;
-    font-weight: 600;
+    font-weight: 500;
     padding: 7px;
     margin-bottom: 20px;
     border: none;
@@ -81,9 +83,9 @@ label.date {
     margin-top: 10px;
 }
 .error {
-    font: 10px/12px "Raleway", "Arial", "Helvetica Neue", sans-serif;
+    font: 12px/14px "Raleway", "Arial", "Helvetica Neue", sans-serif;
     font-weight: 500;
-    color: #33313b;
+    color: #EE5656;
     margin-left: 22%;
     text-shadow: none;
 }
@@ -116,6 +118,7 @@ input[type="submit"] {
     letter-spacing: 0.1em;
     outline: none;
 }
+
 
 input[type="button"]:hover,
 input[type="submit"]:hover {

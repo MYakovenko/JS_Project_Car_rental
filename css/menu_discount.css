@@ -13,11 +13,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
     width: 100%;
     padding: 20px;
     background-color: #f6f1bf;
     border: 3px solid #000;
+    margin-bottom: 50px;
     }
 h2 {
     text-align: center;
@@ -26,7 +26,6 @@ h2 {
     font-weight: 800;
     letter-spacing: 0.5em;
     text-shadow: 2px 2px 2px #000;
-    margin-top: 5%; 
 }
 h3 {
     color: #000;
@@ -75,6 +74,7 @@ th{
     .info-wrapper {
         width: 90%;
         padding: 10px;
+        margin-bottom: 20px;
     }
     h2 {
         font: 14px/16px  "Raleway", "Arial", "Helvetica Neue", sans-serif;
