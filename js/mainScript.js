@@ -4,19 +4,19 @@ let rentCarCities = null
 let rentCarPlaces = null
 
 async function getData () {
-    let promise_1 = fetch ( "json/carsInfo.json" ) // GitHub - json/carsInfo.json
+    let promise_1 = fetch ( "http://localhost:3000/carsInfo" ) // GitHub - json/carsInfo.json
         .then ( response => response.json()                     //  http://localhost:3000/carsInfo
           .then ( response => cars = response )
         )
-    let promise_2 = fetch ( "json/mainBannerPictures.json" ) // GitHub - json/mainBannerPictures.json
+    let promise_2 = fetch ( "http://localhost:3000/mainBannerPictures" ) // GitHub - json/mainBannerPictures.json
         .then ( response => response.json()                             //  http://localhost:3000/mainBannerPictures
           .then ( response => mainBannerPictures = response )
         )
-    let promise_3 = fetch ( "json/rentCarCities.json" ) // GitHub - json/rentCarCities.json
+    let promise_3 = fetch ( "http://localhost:3000/rentCarCities" ) // GitHub - json/rentCarCities.json
         .then ( response => response.json()                         //  http://localhost:3000/rentCarCities
           .then ( response => rentCarCities = response )
     )
-    let promise_4 = fetch ( "json/rentCarPlaces.json" ) // GitHub - json/rentCarPlaces.json
+    let promise_4 = fetch ( "http://localhost:3000/rentCarPlaces" ) // GitHub - json/rentCarPlaces.json
         .then ( response => response.json()                          // http://localhost:3000/rentCarPlaces
           .then ( response => rentCarPlaces = response )
     )
@@ -129,7 +129,10 @@ window.onhashchange = function ( event ) {
 
         case "#1":
             window.scrollTo(0,0)
-            menuElements.mainBanner.style.background = `url(${mainBannerPictures[9]}) right center no-repeat`
+            menuElements.mainBanner.style = `
+                background: url(${mainBannerPictures[9]}) right center no-repeat;
+                background-size: cover;
+            `
             hideElements()
             saveStorage ()
             addElem ("what-do-we-offer", menuElements.menuWrapper)
@@ -137,7 +140,10 @@ window.onhashchange = function ( event ) {
 
         case "#2":
             window.scrollTo(0,0)                  
-            menuElements.mainBanner.style.background = `url(${mainBannerPictures[0]}) right center no-repeat`
+            menuElements.mainBanner.style = `
+                background: url(${mainBannerPictures[0]}) right center no-repeat;
+                background-size: cover;
+            `
             hideElements()
             saveStorage ()
             addElem ("menu-rental-terms", menuElements.menuWrapper)
@@ -145,7 +151,10 @@ window.onhashchange = function ( event ) {
 
         case "#3":
             window.scrollTo(0,0)            
-            menuElements.mainBanner.style.background = `url(${mainBannerPictures[8]}) center center no-repeat`
+            menuElements.mainBanner.style = `
+                background: url(${mainBannerPictures[8]}) center center no-repeat;
+                background-size: cover;
+            `
             hideElements()
             saveStorage ()
             addElem ("menu-discount", menuElements.menuWrapper)
