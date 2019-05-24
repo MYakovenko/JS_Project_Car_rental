@@ -236,19 +236,6 @@
       "pickUpTime": "",
       "dropOffTime": "",
       "id": 2
-    },
-    {
-      "requestCreation": "16.05.2019, 21:59:25",
-      "name": "Tomas",
-      "email": "tomas@gmail.com",
-      "phone": "0999707621",
-      "city": "Lviv",
-      "place": "Lviv D.Halytskyi International Airport",
-      "pickUpDate": "2019-05-08",
-      "dropOffDate": "2019-05-18",
-      "pickUpTime": "",
-      "dropOffTime": "",
-      "id": 3
     }
   ]
 }

@@ -87,6 +87,10 @@ a {
 }
 @media (max-width: 900px){
 
+    .background {
+        align-items: flex-start; 
+    }
+
     .car-info-wrapper {
         width: 60%;
         margin-top: 60px;

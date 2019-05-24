@@ -240,6 +240,13 @@ li.info {
 		min-height: 400px; 
 	}
 
+	.main_banner_info {
+		width: 25%;
+		margin: 10% 5%;
+		font-size: 1rem;
+		line-height: 1.2rem;
+		font-weight: 800;
+	}
 }
 
 @media (min-width: 900px) {

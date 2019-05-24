@@ -4,20 +4,20 @@ let rentCarCities = null
 let rentCarPlaces = null
 
 async function getData () {
-    let promise_1 = fetch ( "http://localhost:3000/carsInfo" ) // GitHub - json/carsInfo.json
-        .then ( response => response.json()                     //  http://localhost:3000/carsInfo
+    let promise_1 = fetch ( "json/carsInfo.json" ) 
+        .then ( response => response.json()              
           .then ( response => cars = response )
         )
-    let promise_2 = fetch ( "http://localhost:3000/mainBannerPictures" ) // GitHub - json/mainBannerPictures.json
-        .then ( response => response.json()                             //  http://localhost:3000/mainBannerPictures
+    let promise_2 = fetch ( "json/mainBannerPictures.json" ) 
+        .then ( response => response.json()                             
           .then ( response => mainBannerPictures = response )
         )
-    let promise_3 = fetch ( "http://localhost:3000/rentCarCities" ) // GitHub - json/rentCarCities.json
-        .then ( response => response.json()                         //  http://localhost:3000/rentCarCities
+    let promise_3 = fetch ( "json/rentCarCities.json" ) 
+        .then ( response => response.json()                
           .then ( response => rentCarCities = response )
     )
-    let promise_4 = fetch ( "http://localhost:3000/rentCarPlaces" ) // GitHub - json/rentCarPlaces.json
-        .then ( response => response.json()                          // http://localhost:3000/rentCarPlaces
+    let promise_4 = fetch ( "json/rentCarPlaces.json" ) 
+        .then ( response => response.json()              
           .then ( response => rentCarPlaces = response )
     )
     await Promise.all ( [ promise_1, promise_2, promise_3, promise_4] )
@@ -32,9 +32,10 @@ let addElem = function ( tagName, container ) {
     )
 }
 
-location.hash = `#0`
 let transport = []
 getData ()
+
+//Creation web components for evailable vehicals (carElement)
 
 let showCars = function () {
     cars.forEach ( ( item, index ) => {
@@ -50,6 +51,8 @@ let showCars = function () {
     })
 }
 
+//Creation a web component with info about chosen car (carInformationElement)
+
 let showInformationElement = function (id) {
     let infoElement = addElem ("car-information-element", document.querySelector('.cars-wrapper'))
     infoElement.setInformationElementImage(cars[id].ref)
@@ -60,9 +63,11 @@ let showInformationElement = function (id) {
     document.body.classList.add("stop-scroling")
 }
 
+//Creation a rental form  web component (rentElement)
+
 let showRentElement = () => addElem ("rent-element", document.querySelector('.cars-wrapper'))
 
-//Переключение меню
+//Menu switching 
 
 let menuElements = {
     menuWrapper: document.querySelector('.page-changing'),
@@ -77,7 +82,6 @@ let menuElements = {
 }
 
 let removeElement = elem => elem.parentNode.removeChild (elem)
-
 
 let saveStorage = (function () {
     var boxTime = []
@@ -101,33 +105,33 @@ function hideElements () {
 
 menuElements.menuMainPage.onclick = function (event) {
     event.preventDefault()
-    location.hash = `#0`
+    location.hash = `#main_menu`
 }
 
 menuElements.menuWhatDoWeOffer.onclick = function (event) {
     event.preventDefault()
-    location.hash = `#1`
+    location.hash = `#what_do_we_offer`
 }
 
 menuElements.menuCarRentalTerms.onclick = function (event) {
     event.preventDefault()
-    location.hash = `#2`
+    location.hash = `#rental_terms`
 }
 
 menuElements.menuDiscount.onclick = function (event) {
     event.preventDefault()
-    location.hash = `#3`
+    location.hash = `#discount`
 }
 
 window.onhashchange = function ( event ) {
     switch ( location.hash ) {
-        case "#0":  
+        case "#main_menu":  
             window.scrollTo(0,0)          
             saveStorage()
             location.reload()
             break
 
-        case "#1":
+        case "#what_do_we_offer":
             window.scrollTo(0,0)
             menuElements.mainBanner.style = `
                 background: url(${mainBannerPictures[9]}) right center no-repeat;
@@ -135,10 +139,10 @@ window.onhashchange = function ( event ) {
             `
             hideElements()
             saveStorage ()
-            addElem ("what-do-we-offer", menuElements.menuWrapper)
+            addElem ("what-do-we-offer", menuElements.menuWrapper) // web component creation (menuElement)
             break
 
-        case "#2":
+        case "#rental_terms":
             window.scrollTo(0,0)                  
             menuElements.mainBanner.style = `
                 background: url(${mainBannerPictures[0]}) right center no-repeat;
@@ -146,10 +150,10 @@ window.onhashchange = function ( event ) {
             `
             hideElements()
             saveStorage ()
-            addElem ("menu-rental-terms", menuElements.menuWrapper)
+            addElem ("menu-rental-terms", menuElements.menuWrapper) // web component creation (menuElement)
             break
 
-        case "#3":
+        case "#discount":
             window.scrollTo(0,0)            
             menuElements.mainBanner.style = `
                 background: url(${mainBannerPictures[8]}) center center no-repeat;
@@ -157,11 +161,11 @@ window.onhashchange = function ( event ) {
             `
             hideElements()
             saveStorage ()
-            addElem ("menu-discount", menuElements.menuWrapper)
+            addElem ("menu-discount", menuElements.menuWrapper) // web component creation (menuElement)
             break
 
         default:
-            location.hash = "#0"
+            location.hash = "#main_menu"
             break
     }
 }

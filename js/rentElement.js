@@ -37,11 +37,7 @@ class rentElement extends HTMLElement {
 
         rentElements["city-select"].onchange = function (event) {
             rentElements["place-select"].innerHTML = ""
-                event.target.value === "Kiev" ? addOption(rentCarPlaces.Kiev, rentElements["place-select"]) : 
-                    event.target.value === "Kharkiv" ? addOption(rentCarPlaces.Kharkiv, rentElements["place-select"]) : 
-                        event.target.value === "Lviv" ? addOption(rentCarPlaces.Lviv, rentElements["place-select"]) :
-                            event.target.value === "Odessa" ? addOption(rentCarPlaces.Odessa, rentElements["place-select"]) :
-                                null
+            addOption(rentCarPlaces[event.target.value], rentElements["place-select"])
         }
         
         function checkXSSAtack (text) {
@@ -101,12 +97,12 @@ class rentElement extends HTMLElement {
         }
 
        var datаReady = false;
+
         function formValidation () {
-            rentElements["input-name"].value === "" || rentElements["input-email"].value === "" || rentElements["input-phone"].value === "" 
-                rentElements["pick-up-date"].value === "" || rentElements["drop-off-date"].value === "" ? null :
-                    !emailValidation(rentElements["input-email"].value) ? null :
-                        !phoneValidation(rentElements["input-phone"].value) ? null :
-                            datаReady = true 
+            !(rentElements["input-name" && "input-email" && "input-phone" && "pick-up-date" && "drop-off-date"].value) ? null :
+                !emailValidation(rentElements["input-email"].value) ? null :
+                    !phoneValidation(rentElements["input-phone"].value) ? null :
+                        datаReady = true 
         }
     
         rentElements["cancel-btn"].onclick = function ( event ) {
