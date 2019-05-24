@@ -1,5 +1,7 @@
 # Luxury car rental app
-This is a car rental app where you may choose your favorite car, that suits your needs.  
+This is a SPA based on HTML, CSS and core JS  
+
+Using this app you may choose your favorite car, that suits your needs.  
 
 It's easy to rent - by filling out several fields. 
 
