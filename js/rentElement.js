@@ -3,7 +3,7 @@ class rentElement extends HTMLElement {
         super()
         var shadow = this.attachShadow ({mode: "open"})
 
-        let rentElementTemplate = document.getElementById('rent-element')
+        const rentElementTemplate = document.getElementById('rent-element')
         shadow.appendChild(
             rentElementTemplate.content.cloneNode(true)
         )
@@ -15,10 +15,10 @@ class rentElement extends HTMLElement {
             return formElem
         }
 
-        let rentForm = shadow.querySelector("form")
-        let rentButtons = shadow.querySelector(".button-wrapper")
+        const rentForm = shadow.querySelector("form")
+        const rentButtons = shadow.querySelector(".button-wrapper")
 
-        let rentElements = Object.assign({}, 
+        const rentElements = Object.assign({}, 
             getElements(rentForm.children),
             getElements(rentButtons.children)
         )

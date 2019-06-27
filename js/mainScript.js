@@ -4,27 +4,27 @@ let rentCarCities = null
 let rentCarPlaces = null
 
 async function getData () {
-    let promise_1 = fetch ( "json/carsInfo.json" ) 
-        .then ( response => response.json()              
+    let promise_1 = fetch ( "http://localhost:3000/carsInfo" ) // GitHub - json/carsInfo.json
+        .then ( response => response.json()                     //  http://localhost:3000/carsInfo
           .then ( response => cars = response )
         )
-    let promise_2 = fetch ( "json/mainBannerPictures.json" ) 
-        .then ( response => response.json()                             
+    let promise_2 = fetch ( "http://localhost:3000/mainBannerPictures" ) // GitHub - json/mainBannerPictures.json
+        .then ( response => response.json()                             //  http://localhost:3000/mainBannerPictures
           .then ( response => mainBannerPictures = response )
         )
-    let promise_3 = fetch ( "json/rentCarCities.json" ) 
-        .then ( response => response.json()                
+    let promise_3 = fetch ( "http://localhost:3000/rentCarCities" ) // GitHub - json/rentCarCities.json
+        .then ( response => response.json()                         //  http://localhost:3000/rentCarCities
           .then ( response => rentCarCities = response )
     )
-    let promise_4 = fetch ( "json/rentCarPlaces.json" ) 
-        .then ( response => response.json()              
+    let promise_4 = fetch ( "http://localhost:3000/rentCarPlaces" ) // GitHub - json/rentCarPlaces.json
+        .then ( response => response.json()                          // http://localhost:3000/rentCarPlaces
           .then ( response => rentCarPlaces = response )
     )
     await Promise.all ( [ promise_1, promise_2, promise_3, promise_4] )
     showCars ()
 }
 
-let addElem = function ( tagName, container ) {
+function addElem ( tagName, container ) {
     container = container && container.nodeType === 1 ?
                 container : document.body
     return container.appendChild (
@@ -32,12 +32,12 @@ let addElem = function ( tagName, container ) {
     )
 }
 
-let transport = []
+const transport = []
 getData ()
 
 //Creation web components for evailable vehicals (carElement)
 
-let showCars = function () {
+function showCars () {
     cars.forEach ( ( item, index ) => {
         
         transport.push ( ( function () {                           
@@ -53,7 +53,7 @@ let showCars = function () {
 
 //Creation a web component with info about chosen car (carInformationElement)
 
-let showInformationElement = function (id) {
+function showInformationElement (id) {
     let infoElement = addElem ("car-information-element", document.querySelector('.cars-wrapper'))
     infoElement.setInformationElementImage(cars[id].ref)
     infoElement.setInformationElementOverview(cars[id].overview)
@@ -65,11 +65,11 @@ let showInformationElement = function (id) {
 
 //Creation a rental form  web component (rentElement)
 
-let showRentElement = () => addElem ("rent-element", document.querySelector('.cars-wrapper'))
+const showRentElement = () => addElem ("rent-element", document.querySelector('.cars-wrapper'))
 
 //Menu switching 
 
-let menuElements = {
+const menuElements = {
     menuWrapper: document.querySelector('.page-changing'),
     mainBanner: document.querySelector('.main_banner'),
     mainBannerInfo: document.querySelector('.main_banner_info'),
@@ -81,9 +81,9 @@ let menuElements = {
     menuDiscount: document.getElementById('discount-menu')
 }
 
-let removeElement = elem => elem.parentNode.removeChild (elem)
+const removeElement = elem => elem.parentNode.removeChild (elem)
 
-let saveStorage = (function () {
+const saveStorage = (function () {
     var boxTime = []
     return function () {
         boxTime.push ({
@@ -105,7 +105,7 @@ function hideElements () {
 
 menuElements.menuMainPage.onclick = function (event) {
     event.preventDefault()
-    location.hash = `#main_menu`
+    location.hash = `#main_page`
 }
 
 menuElements.menuWhatDoWeOffer.onclick = function (event) {
@@ -125,7 +125,7 @@ menuElements.menuDiscount.onclick = function (event) {
 
 window.onhashchange = function ( event ) {
     switch ( location.hash ) {
-        case "#main_menu":  
+        case "#main_page":  
             window.scrollTo(0,0)          
             saveStorage()
             location.reload()
@@ -165,7 +165,7 @@ window.onhashchange = function ( event ) {
             break
 
         default:
-            location.hash = "#main_menu"
+            location.hash = "#main_page"
             break
     }
 }

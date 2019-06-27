@@ -3,7 +3,7 @@ class carInformationElement extends HTMLElement {
         super()
         var shadow = this.attachShadow ({mode: 'open'})
 
-        let carElementInformationTemplate = document.getElementById('car-information-element')
+        const carElementInformationTemplate = document.getElementById('car-information-element')
         shadow.appendChild(
             carElementInformationTemplate.content.cloneNode(true)
         )
@@ -15,10 +15,10 @@ class carInformationElement extends HTMLElement {
             return formElem
         }
 
-        let carInfoWrapper = shadow.querySelector(".car-info-wrapper")
-        let infoComteiner = shadow.querySelector("#info-conteiner")
-        let additionalInfo = shadow.querySelector("#additional-info")
-        let buttons = shadow.querySelector("#buttons-conteiner")
+        const carInfoWrapper = shadow.querySelector(".car-info-wrapper")
+        const infoComteiner = shadow.querySelector("#info-conteiner")
+        const additionalInfo = shadow.querySelector("#additional-info")
+        const buttons = shadow.querySelector("#buttons-conteiner")
 
         this.carInformationElements = Object.assign({}, 
             getElements(carInfoWrapper.children),

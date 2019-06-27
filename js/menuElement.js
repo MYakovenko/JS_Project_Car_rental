@@ -4,7 +4,7 @@ function createMenuComponent (templateID) {
                 super()
                 var shadow = this.attachShadow({mode: 'open'})
 
-                let menuTemplate = document.getElementById(templateID)
+                const menuTemplate = document.getElementById(templateID)
                 shadow.appendChild(
                     menuTemplate.content.cloneNode(true)
                 )

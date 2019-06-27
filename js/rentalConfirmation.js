@@ -3,7 +3,7 @@ class RentalConfirmation extends HTMLElement {
         super()
         var shadow = this.attachShadow ({mode: "open"})
 
-        let confirmationTemplate = document.getElementById('rental-confirmation-template')
+        const confirmationTemplate = document.getElementById('rental-confirmation-template')
         shadow.appendChild(
             confirmationTemplate.content.cloneNode(true)
         )
