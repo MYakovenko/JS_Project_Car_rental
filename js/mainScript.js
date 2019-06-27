@@ -4,20 +4,20 @@ let rentCarCities = null
 let rentCarPlaces = null
 
 async function getData () {
-    let promise_1 = fetch ( "http://localhost:3000/carsInfo" ) // GitHub - json/carsInfo.json
-        .then ( response => response.json()                     //  http://localhost:3000/carsInfo
+    let promise_1 = fetch ( "json/carsInfo.json" ) 
+        .then ( response => response.json()         
           .then ( response => cars = response )
         )
-    let promise_2 = fetch ( "http://localhost:3000/mainBannerPictures" ) // GitHub - json/mainBannerPictures.json
-        .then ( response => response.json()                             //  http://localhost:3000/mainBannerPictures
+    let promise_2 = fetch ( "json/mainBannerPictures.json" ) 
+        .then ( response => response.json()                       
           .then ( response => mainBannerPictures = response )
         )
-    let promise_3 = fetch ( "http://localhost:3000/rentCarCities" ) // GitHub - json/rentCarCities.json
-        .then ( response => response.json()                         //  http://localhost:3000/rentCarCities
+    let promise_3 = fetch ( "json/rentCarCities.json" ) 
+        .then ( response => response.json()                        
           .then ( response => rentCarCities = response )
     )
-    let promise_4 = fetch ( "http://localhost:3000/rentCarPlaces" ) // GitHub - json/rentCarPlaces.json
-        .then ( response => response.json()                          // http://localhost:3000/rentCarPlaces
+    let promise_4 = fetch ( "json/rentCarPlaces.json" ) 
+        .then ( response => response.json()                         
           .then ( response => rentCarPlaces = response )
     )
     await Promise.all ( [ promise_1, promise_2, promise_3, promise_4] )
