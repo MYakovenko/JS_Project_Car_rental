@@ -23,7 +23,7 @@
     {
       "id": 1,
       "title": "Nissan GT-R Premium",
-      "ref": "http://silverdice.us/wp-content/uploads/2017/07/2017-nissan-gt-r-first-drive-sixkpazm-jpg.jpg",
+      "ref": "https://www.motorwerks.com/inventoryphotos/2601/jn1ar5ef9jm710239/ip/3.jpg?height=400",
       "engine": "3.8-liter twin-turbo V6 565 HP",
       "price": "65 USD",
       "overview": "There’s not another car on the planet just like this. Refined or no, raining or not, and on a world-famous racing track or just taking the long way to the office one morning, the 2017 GT-R is just as scary, satisfying, and surreal as it ever was as long as you’re willing to push it there. Just be careful of the biting fish."
@@ -249,6 +249,19 @@
       "pickUpTime": "",
       "dropOffTime": "",
       "id": 3
+    },
+    {
+      "requestCreation": "27.06.2019, 10:38:06",
+      "name": "dsd",
+      "email": "marinka1610@gmail.com",
+      "phone": "+38099-970-76-21",
+      "city": "Kharkiv",
+      "place": "Kharkiv International Airport",
+      "pickUpDate": "2019-06-28",
+      "dropOffDate": "2019-06-29",
+      "pickUpTime": "",
+      "dropOffTime": "",
+      "id": 4
     }
   ]
 }
